@@ -1,0 +1,6 @@
+class FashionDesigner
+instance variables
+  fashionShow:[FashionShow];
+  style:seq of (char);
+
+end FashionDesigner

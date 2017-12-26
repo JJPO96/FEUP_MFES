@@ -1,0 +1,7 @@
+class Event
+instance variables
+  name:seq of (char);
+  startDate:?;
+  endDate:?;
+
+end Event

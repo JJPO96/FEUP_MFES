@@ -1,0 +1,5 @@
+class Presentation
+instance variables
+  subject:seq of (char);
+
+end Presentation

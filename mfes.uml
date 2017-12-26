@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_xQ3YgOp9Eee2eK2LX03aew" name="mfes">
+  <eAnnotations xmi:id="_xQ3Ygep9Eee2eK2LX03aew" source="Objing">
+    <contents xmi:type="uml:Property" xmi:id="_xQ3Ygup9Eee2eK2LX03aew" name="exporterVersion">
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_xQ3Yg-p9Eee2eK2LX03aew" value="3.0.0"/>
+    </contents>
+  </eAnnotations>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xQ3YhOp9Eee2eK2LX03aew" name="FashionShow">
+    <ownedComment xmi:id="_xQ3Yhep9Eee2eK2LX03aew">
+      <body>&lt;Enter note text here></body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_xQ3Yhup9Eee2eK2LX03aew" name="name" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xQ3Yh-p9Eee2eK2LX03aew" name="place" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xQ3_kOp9Eee2eK2LX03aew" name="startDate" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xQ3_kep9Eee2eK2LX03aew" name="endDate" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xQ3_kup9Eee2eK2LX03aew" name="Person" isAbstract="true">
+    <ownedAttribute xmi:id="_xQ3_k-p9Eee2eK2LX03aew" name="name" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xQ3_lOp9Eee2eK2LX03aew" name="birthdate" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xQ3_lep9Eee2eK2LX03aew" name="Attribute" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xQ3_lup9Eee2eK2LX03aew" name="FashionDesigner">
+    <generalization xmi:id="_xQ3_l-p9Eee2eK2LX03aew" general="_xQ3_kup9Eee2eK2LX03aew"/>
+    <ownedAttribute xmi:id="_xQ3_mOp9Eee2eK2LX03aew" name="fashionShow" visibility="public" type="_xQ3YhOp9Eee2eK2LX03aew" association="_xQ3_m-p9Eee2eK2LX03aew">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xQ3_mep9Eee2eK2LX03aew"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xQ3_mup9Eee2eK2LX03aew" name="style" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:AssociationClass" xmi:id="_xQ3_m-p9Eee2eK2LX03aew" name="Show" memberEnd="_xQ3_mOp9Eee2eK2LX03aew _xQ3_n-p9Eee2eK2LX03aew">
+    <generalization xmi:id="_xQ3_nOp9Eee2eK2LX03aew" general="_xQ3_yup9Eee2eK2LX03aew"/>
+    <ownedAttribute xmi:id="_xQ3_nep9Eee2eK2LX03aew" name="theme" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_xQ3_nup9Eee2eK2LX03aew">
+        <body>&lt;Enter note text here></body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedEnd xmi:id="_xQ3_n-p9Eee2eK2LX03aew" visibility="public" type="_xQ3_lup9Eee2eK2LX03aew" association="_xQ3_m-p9Eee2eK2LX03aew">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xQ3_oOp9Eee2eK2LX03aew"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xQ3_oep9Eee2eK2LX03aew" name="Attendee">
+    <ownedComment xmi:id="_xQ3_oup9Eee2eK2LX03aew">
+      <body>&lt;Enter note text here></body>
+    </ownedComment>
+    <generalization xmi:id="_xQ3_o-p9Eee2eK2LX03aew" general="_xQ3_kup9Eee2eK2LX03aew"/>
+    <ownedAttribute xmi:id="_xQ3_pOp9Eee2eK2LX03aew" visibility="public" type="_xQ3_m-p9Eee2eK2LX03aew" association="_xQ3_qup9Eee2eK2LX03aew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xQ3_pep9Eee2eK2LX03aew" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xQ3_pup9Eee2eK2LX03aew"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xQ3_p-p9Eee2eK2LX03aew" visibility="public" type="_xQ3_x-p9Eee2eK2LX03aew" association="_xQ3_rup9Eee2eK2LX03aew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xQ3_qOp9Eee2eK2LX03aew" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xQ3_qep9Eee2eK2LX03aew"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_xQ3_qup9Eee2eK2LX03aew" name="attendedBy" memberEnd="_xQ3_pOp9Eee2eK2LX03aew _xQ3_q-p9Eee2eK2LX03aew">
+    <ownedEnd xmi:id="_xQ3_q-p9Eee2eK2LX03aew" visibility="public" type="_xQ3_oep9Eee2eK2LX03aew" association="_xQ3_qup9Eee2eK2LX03aew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xQ3_rOp9Eee2eK2LX03aew" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xQ3_rep9Eee2eK2LX03aew"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_xQ3_rup9Eee2eK2LX03aew" name="attendedBy" memberEnd="_xQ3_p-p9Eee2eK2LX03aew _xQ3_r-p9Eee2eK2LX03aew">
+    <ownedEnd xmi:id="_xQ3_r-p9Eee2eK2LX03aew" visibility="public" type="_xQ3_oep9Eee2eK2LX03aew" association="_xQ3_rup9Eee2eK2LX03aew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xQ3_sOp9Eee2eK2LX03aew" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xQ3_sep9Eee2eK2LX03aew"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xQ3_sup9Eee2eK2LX03aew" name="Model">
+    <generalization xmi:id="_xQ3_s-p9Eee2eK2LX03aew" general="_xQ3_kup9Eee2eK2LX03aew"/>
+    <ownedAttribute xmi:id="_xQ3_tOp9Eee2eK2LX03aew" visibility="public" type="_xQ3_m-p9Eee2eK2LX03aew" association="_xQ3_uOp9Eee2eK2LX03aew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xQ3_tep9Eee2eK2LX03aew" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xQ3_tup9Eee2eK2LX03aew"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xQ3_t-p9Eee2eK2LX03aew" name="gender" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_xQ3_uOp9Eee2eK2LX03aew" name="hasParticipationOf" memberEnd="_xQ3_tOp9Eee2eK2LX03aew _xQ3_uep9Eee2eK2LX03aew">
+    <ownedEnd xmi:id="_xQ3_uep9Eee2eK2LX03aew" visibility="public" type="_xQ3_sup9Eee2eK2LX03aew" association="_xQ3_uOp9Eee2eK2LX03aew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xQ3_uup9Eee2eK2LX03aew" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xQ3_u-p9Eee2eK2LX03aew"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xQ3_vOp9Eee2eK2LX03aew" name="ModelAgency">
+    <ownedComment xmi:id="_xQ3_vep9Eee2eK2LX03aew">
+      <body>&lt;Enter note text here></body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_xQ3_vup9Eee2eK2LX03aew" visibility="public" type="_xQ3_sup9Eee2eK2LX03aew" aggregation="shared" association="_xQ3_xOp9Eee2eK2LX03aew">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xQ3_v-p9Eee2eK2LX03aew" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xQ3_wOp9Eee2eK2LX03aew" name="name" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_xQ3_wep9Eee2eK2LX03aew">
+        <body>&lt;Enter note text here></body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xQ3_wup9Eee2eK2LX03aew" name="country" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_xQ3_w-p9Eee2eK2LX03aew">
+        <body>&lt;Enter note text here></body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_xQ3_xOp9Eee2eK2LX03aew" name="representedBy" memberEnd="_xQ3_vup9Eee2eK2LX03aew _xQ3_xep9Eee2eK2LX03aew">
+    <ownedEnd xmi:id="_xQ3_xep9Eee2eK2LX03aew" visibility="public" type="_xQ3_vOp9Eee2eK2LX03aew" association="_xQ3_xOp9Eee2eK2LX03aew">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xQ3_xup9Eee2eK2LX03aew"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xQ3_x-p9Eee2eK2LX03aew" name="Presentation">
+    <generalization xmi:id="_xQ3_yOp9Eee2eK2LX03aew" general="_xQ3_yup9Eee2eK2LX03aew"/>
+    <ownedAttribute xmi:id="_xQ3_yep9Eee2eK2LX03aew" name="subject" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xQ3_yup9Eee2eK2LX03aew" name="Event" isAbstract="true">
+    <ownedAttribute xmi:id="_xQ3_y-p9Eee2eK2LX03aew" name="name" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xQ3_zOp9Eee2eK2LX03aew" name="startDate" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xQ3_zep9Eee2eK2LX03aew" name="endDate" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+  </packagedElement>
+</uml:Model>
