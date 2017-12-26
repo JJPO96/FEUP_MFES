@@ -1,6 +1,4 @@
 class Model
 instance variables
-  null:set of (Show);
-  gender:seq of (char);
-
+  showsParticipated:set of (Show);
 end Model

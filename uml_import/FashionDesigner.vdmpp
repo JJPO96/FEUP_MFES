@@ -1,6 +1,8 @@
 class FashionDesigner
+types
+	public String = seq of char;
 instance variables
   fashionShow:[FashionShow];
-  style:seq of (char);
+  style:String;
 
 end FashionDesigner

@@ -1,5 +1,7 @@
 class Presentation
+types
+	public String = seq of char;
 instance variables
-  subject:seq of (char);
+  subject:String;
 
 end Presentation

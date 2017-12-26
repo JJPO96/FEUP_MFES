@@ -1,8 +1,15 @@
 class FashionShow
+types
+	public String = seq of char;
+	public Date :: year : nat
+				 month: nat
+				 day : nat
+				 hour : nat
+				 minute : nat
 instance variables
-  name:seq of (char);
-  place:seq of (char);
-  startDate:?;
-  endDate:?;
+  name:String;
+  place:String;
+  startDate:Date;
+  endDate:Date;
 
 end FashionShow

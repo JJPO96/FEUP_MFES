@@ -1,5 +1,7 @@
 class Show
+types
+	public String = seq of char;
 instance variables
-  theme:seq of (char);
+  theme:String;
 
 end Show

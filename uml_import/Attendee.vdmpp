@@ -1,6 +1,6 @@
 class Attendee
 instance variables
-  null:set of (Show);
-  null:set of (Presentation);
+  showsAttended:set of (Show);
+  presentationsAttended:set of (Presentation);
 
 end Attendee

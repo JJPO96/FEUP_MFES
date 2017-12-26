@@ -1,7 +1,15 @@
 class Person
+types
+	public String = seq of char;
+	public Date :: year : nat
+				 month: nat
+				 day : nat
+				 hour : nat
+				 minute : nat;
+	public Gender = <Male> | <Female>;
 instance variables
-  name:seq of (char);
-  birthdate:?;
-  Attribute:seq of (char);
+  name:String;
+  birthdate:Date;
+  gender:Gender;
 
 end Person
