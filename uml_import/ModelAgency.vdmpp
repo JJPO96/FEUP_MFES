@@ -1,7 +1,0 @@
-class ModelAgency
-instance variables
-  null:set of (Model);
-  name:seq of (char);
-  country:seq of (char);
-
-end ModelAgency

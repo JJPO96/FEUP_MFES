@@ -1,7 +1,0 @@
-class Presentation
-types
-	public String = seq of char;
-instance variables
-  subject:String;
-
-end Presentation

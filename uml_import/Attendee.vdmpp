@@ -1,6 +1,0 @@
-class Attendee
-instance variables
-  showsAttended:set of (Show);
-  presentationsAttended:set of (Presentation);
-
-end Attendee

@@ -1,7 +1,0 @@
-class Show
-types
-	public String = seq of char;
-instance variables
-  theme:String;
-
-end Show

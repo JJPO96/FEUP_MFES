@@ -1,4 +1,0 @@
-class Model
-instance variables
-  showsParticipated:set of (Show);
-end Model
