@@ -1,8 +1,8 @@
 class FashionShow
 instance variables
-  name:seq of (char);
-  place:seq of (char);
-  startDate:?;
-  endDate:?;
+  name:Utils`string;
+  place:Utils`string;
+  startDate:Utils`date;
+  endDate:Utils`date;
 
 end FashionShow

@@ -1,0 +1,22 @@
+class Utils
+types
+types
+	public string = seq of char;
+	public date :: year : nat
+				 month: nat
+				 day : nat;
+	public gender = <Male> | <Female>;
+	public clothSize = <XL> | <L> | <M> | <S> | <XS>;
+	public clothType = <Shirt> | <Jacket> | <Pants> | <Shoes> | <Hats>;
+	public ticketType = <Designer> | <Worker> | <Volunteer> | <Guest> | <Sponsor> | <Attendee>;
+values
+-- TODO Define values here
+instance variables
+-- TODO Define instance variables here
+operations
+-- TODO Define operations here
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end Utils

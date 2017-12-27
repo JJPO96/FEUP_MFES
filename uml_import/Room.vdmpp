@@ -1,6 +1,6 @@
 class Room
 instance variables
-  name:seq of (char);
-  localization:seq of (char);
+  name:Utils`string;
+  localization:Utils`string;
 
 end Room

@@ -1,7 +1,7 @@
 class Ticket
 instance variables
-  startDate:?;
-  endDate:?;
-  type:TicketType;
+  startDate:Utils`date;
+  endDate:Utils`date;
+  type:Utils`ticketType;
 
 end Ticket

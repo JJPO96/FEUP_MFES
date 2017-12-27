@@ -1,6 +1,7 @@
 class PieceOfCloth
+types
 instance variables
-  size:ClothSize;
-  ClothType:ClothType;
+  size:Utils`clothSize;
+  ClothType:Utils`clothType;
 
 end PieceOfCloth

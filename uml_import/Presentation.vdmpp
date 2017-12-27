@@ -1,5 +1,5 @@
 class Presentation
 instance variables
-  subject:seq of (char);
+  subject:Utils`string;
 
 end Presentation

@@ -1,5 +1,5 @@
 class RunwayShow
 instance variables
-  theme:seq of (char);
+  theme:Utils`string;
 
 end RunwayShow

@@ -1,8 +1,8 @@
 class Event
 instance variables
   null:Room;
-  name:seq of (char);
-  startDate:?;
-  endDate:?;
+  name:Utils`string;
+  startDate:Utils`date;
+  endDate:Utils`date;
 
 end Event

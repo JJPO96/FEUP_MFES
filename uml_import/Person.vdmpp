@@ -1,13 +1,15 @@
 class Person
 instance variables
-  null:set of (FashionShow);
-  null:set of (Event);
-  null:set of (Presentation);
-  null:set of (RunwayShow);
-  null:set of (PieceOfCloth);
-  name:seq of (char);
+  participates:set of (FashionShow);
+  attendes:set of (Event);
+  presents:set of (Presentation);
+  directs:set of (RunwayShow);
+  displays:set of (PieceOfCloth);
+  creations:set of (PieceOfCloth);
+  name:Utils`string;
   birthdate:?;
-  Attribute:seq of (char);
-  gender:Gender;
+  Attribute:Utils`string;
+  gender:Utils`gender;
+  isHandicapped:bool;
 
 end Person

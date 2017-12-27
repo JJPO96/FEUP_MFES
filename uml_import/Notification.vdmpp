@@ -1,6 +1,6 @@
 class Notification
 instance variables
-  startTime:?;
-  minToNotify:?;
+  startTime:Utils`date;
+  minToNotify:nat;
 
 end Notification
