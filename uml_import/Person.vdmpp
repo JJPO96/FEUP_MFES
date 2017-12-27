@@ -1,0 +1,13 @@
+class Person
+instance variables
+  null:set of (FashionShow);
+  null:set of (Event);
+  null:set of (Presentation);
+  null:set of (RunwayShow);
+  null:set of (PieceOfCloth);
+  name:seq of (char);
+  birthdate:?;
+  Attribute:seq of (char);
+  gender:Gender;
+
+end Person

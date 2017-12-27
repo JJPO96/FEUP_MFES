@@ -1,0 +1,5 @@
+class RunwayShow
+instance variables
+  theme:seq of (char);
+
+end RunwayShow

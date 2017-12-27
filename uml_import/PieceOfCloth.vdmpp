@@ -1,0 +1,6 @@
+class PieceOfCloth
+instance variables
+  size:ClothSize;
+  ClothType:ClothType;
+
+end PieceOfCloth

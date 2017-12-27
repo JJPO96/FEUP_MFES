@@ -1,0 +1,8 @@
+class FashionShow
+instance variables
+  name:seq of (char);
+  place:seq of (char);
+  startDate:?;
+  endDate:?;
+
+end FashionShow

@@ -1,0 +1,7 @@
+class Ticket
+instance variables
+  startDate:?;
+  endDate:?;
+  type:TicketType;
+
+end Ticket

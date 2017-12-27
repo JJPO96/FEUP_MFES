@@ -1,0 +1,8 @@
+class Event
+instance variables
+  null:Room;
+  name:seq of (char);
+  startDate:?;
+  endDate:?;
+
+end Event
