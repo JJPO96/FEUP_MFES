@@ -1,5 +1,6 @@
 class Ticket
 instance variables
+	person:Person;
   startDate:Utils`date;
   endDate:Utils`date;
   type:Utils`ticketType;

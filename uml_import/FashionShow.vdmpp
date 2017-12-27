@@ -3,6 +3,6 @@ instance variables
   name:Utils`string;
   place:Utils`string;
   startDate:Utils`date;
-  endDate:Utils`date;
+  endDate:Utils`date
 
 end FashionShow

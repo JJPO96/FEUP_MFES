@@ -1,0 +1,17 @@
+class ClothDisplayed
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+	model:Person;
+	cloth:PieceOfCloth;
+		inv exists cloth.creator in set runway.organizers;
+	runway:RunwayShow;
+operations
+-- TODO Define operations here
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end ClothDisplayed

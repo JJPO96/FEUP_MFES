@@ -1,6 +1,7 @@
 class Event
 instance variables
-  null:Room;
+	organizers: set of (Person);
+  place:Room;
   name:Utils`string;
   startDate:Utils`date;
   endDate:Utils`date;

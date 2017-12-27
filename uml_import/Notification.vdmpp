@@ -1,5 +1,7 @@
 class Notification
 instance variables
+	person:Person;
+	event:Event;
   startTime:Utils`date;
   minToNotify:nat;
 

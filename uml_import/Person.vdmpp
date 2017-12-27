@@ -2,12 +2,11 @@ class Person
 instance variables
   participates:set of (FashionShow);
   attendes:set of (Event);
-  presents:set of (Presentation);
   directs:set of (RunwayShow);
   displays:set of (PieceOfCloth);
   creations:set of (PieceOfCloth);
   name:Utils`string;
-  birthdate:?;
+  birthdate:Utils`date;
   Attribute:Utils`string;
   gender:Utils`gender;
   isHandicapped:bool;
