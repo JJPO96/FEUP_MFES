@@ -4,7 +4,7 @@ instance variables
   public birthdate : Utils`date;
   public gender : Utils`gender;
   public clothSize : Utils`clothSize;
-  public isHandicapped : bool;
+  public handicapped : bool;
 
 operations
 -- constructor
@@ -14,8 +14,33 @@ operations
 			birthdate := bD;
 			gender := g;
 			clothSize := cS;
-			isHandicapped := iH;
+			handicapped := iH;
 			return self;
-		)
+		);
+		
+--set name		
+	public setName : Utils`string ==> ()
+		setName(n) ==
+			name := n;
+			
+--set birthdate
+	public setBirthdate : Utils`date ==> ()
+		setBirthdate(bD) ==
+			birthdate := bD;
+			
+--set gender
+	public setGender : Utils`gender ==> ()
+		setGender(g) ==
+			gender := g;
+			
+-- set cloth size
+	public setClothSize : Utils`clothSize ==> ()
+		setClothSize(cS)	==
+			clothSize := cS;
+	
+--set handicapped
+	public isHandicapped : bool ==> ()
+		isHandicapped(iH) ==		
+			handicapped := iH;
 	
 end Person

@@ -13,6 +13,11 @@ operations
 		endDate := eD;
 		subject := s;
 		return self;		
-	) 
+	);
+
+-- set subject	
+	public setSubject : Utils`string ==> ()
+		setSubject(s) ==
+			subject := s;
 
 end Presentation

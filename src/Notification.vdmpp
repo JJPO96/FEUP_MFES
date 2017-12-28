@@ -15,5 +15,24 @@ instance variables
  			minToNotify := m;
  			return self;
  		)
+ 		post event.startDate = startTime;
+ 
+ -- set person
+ 	public setPerson : Person ==> ()
+ 		setPerson(p) ==
+ 			person := p;
+ 			
+ -- set event
+ 	public setEvent : Event ==> ()
+ 		setEvent(e) == (
+ 			event := e;
+ 			startTime := event.startDate;
+ 		)
+ 		post event.startDate = startTime;
 
+-- set minutes to notification	
+ 	public setMinToNotify : nat ==> ()
+ 		setMinToNotify(m) ==
+ 			minToNotify := m;
+ 			
 end Notification

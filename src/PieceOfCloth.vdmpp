@@ -13,6 +13,21 @@ operations
 			size := s;
 			clothType := t;
 			return self;
-		);
-		
+		);		
+ 
+-- set creator
+	public setCreator : Person ==> ()
+		setCreator(p) ==
+			creator := p;
+
+-- set size		
+	public setSize : Utils`clothSize ==> ()
+		setSize(s) ==
+			size := s;
+			
+-- set clothType
+	public setClothType : Utils`clothType ==> ()
+		setClothType(t) == 
+			clothType := t;
+			
 end PieceOfCloth

@@ -14,6 +14,26 @@ operations
 			startDate := sD;
 			endDate := eD;
 			return self;		
-		) 
+		);
+		
+-- set name
+ 	public setName : Utils`string ==> ()
+ 		setName(n) ==
+ 			name := n;
+ 			
+-- set place
+ 	public setPlace : Utils`string ==> ()
+ 		setPlace(p) ==
+ 			place := p;
+			
+-- set start date
+	public setStartDate : Utils`date ==> ()
+		setStartDate(d) ==
+			startDate := d;
+			
+-- set end date
+	public setEndDate : Utils`date ==> ()
+		setEndDate(d) ==
+			endDate := d;
 
 end FashionShow

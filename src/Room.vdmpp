@@ -10,5 +10,16 @@ operations
 			name := n;
 			localization	:= local;
 			return self;
-		)
+		);
+		
+-- set name
+ 	public setName : Utils`string ==> ()
+ 		setName(n) ==
+ 			name := n;
+ 			
+-- set localization
+ 	public setLocalization : Utils`string ==> ()
+ 		setLocalization(l) ==
+ 			localization := l;
+ 			
 end Room

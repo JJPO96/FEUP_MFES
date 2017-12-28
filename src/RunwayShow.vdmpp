@@ -13,6 +13,11 @@ operations
  			endDate := eD;
 			theme := t;
 			return self;		
-		)
+		);
+		
+-- set name
+ 	public setTheme : Utils`string ==> ()
+ 		setTheme(t) ==
+ 			theme := t;
 		
 end RunwayShow
