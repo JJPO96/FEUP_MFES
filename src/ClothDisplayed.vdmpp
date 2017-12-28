@@ -19,7 +19,29 @@ operations
 			return self;
 		)
 		pre c.creator in set r.organizers and
-				c.size = p.clothSize;  
+				c.size = p.clothSize;
+				
+-- set model
+	public setModel : Person ==> ()
+		setModel(p) == (
+			model := p;
+		)
+		pre cloth.size = p.clothSize;
+
+-- set cloth
+	public setCloth : PieceOfCloth ==> ()
+		setCloth(c) == (
+			cloth := c;
+		)
+		pre c.creator in set runway.organizers and
+				c.size = model.clothSize;
+			
+-- set runway show
+	public setRunwayShow : RunwayShow ==> ()
+		setRunwayShow(r) == (
+			runway := r;
+		)
+		pre cloth.creator in set r.organizers;
 		
 functions
 -- TODO Define functiones here

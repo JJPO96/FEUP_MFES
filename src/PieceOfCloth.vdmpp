@@ -14,14 +14,5 @@ operations
 			clothType := t;
 			return self;
 		);
-
-	public getCreator: () ==> Person
-		getCreator() == return creator;
-		
-	public getSize: () ==> Utils`clothSize
-		getSize() == return size;
-	
-	public getClothType: () ==> Utils`clothType
-		getClothType() == return clothType;
 		
 end PieceOfCloth
