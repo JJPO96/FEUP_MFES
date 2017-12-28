@@ -1,8 +1,19 @@
-class FashionShow is subclass of Event
-instance variables
-  name:Utils`string;
-  place:Utils`string;
-  startDate:Utils`date;
-  endDate:Utils`date
+class FashionShow
+instance variables 
+	public name:Utils`string;
+  public place:Utils`string;
+  public startDate:Utils`date;
+  public endDate:Utils`date
+
+operations
+-- constructor
+	public FashionShow : Utils`string * Utils`string * Utils`date * Utils`date ==> FashionShow
+		FashionShow(n, p, sD, eD) == (
+			name := n;
+			place := p;
+			startDate := sD;
+			endDate := eD;
+			return self;		
+		) 
 
 end FashionShow

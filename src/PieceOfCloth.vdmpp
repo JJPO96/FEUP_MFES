@@ -6,6 +6,7 @@ instance variables
   public clothType:Utils`clothType;
   
 operations
+-- constructor
 	public PieceOfCloth : Person * Utils`clothSize * Utils`clothType ==> PieceOfCloth
 		PieceOfCloth(p,s,t) == (
 			creator := p;
@@ -13,7 +14,7 @@ operations
 			clothType := t;
 			return self;
 		);
-		
+
 	public getCreator: () ==> Person
 		getCreator() == return creator;
 		

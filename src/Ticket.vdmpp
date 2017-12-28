@@ -1,8 +1,21 @@
 class Ticket
 instance variables
-	person:Person;
-  startDate:Utils`date;
-  endDate:Utils`date;
-  type:Utils`ticketType;
+	public person : Person;
+	public show : FashionShow;
+  public startDate : Utils`date;
+  public endDate : Utils`date;
+  public type : Utils`ticketType;
+  
+operations
+-- constructor
+	public Ticket : Person * FashionShow * Utils`date * Utils`date * Utils`ticketType ==> Ticket
+		Ticket(p, s, sD, eD, t) == (
+			person := p;
+ 			show := s;
+ 			startDate := sD;
+ 			endDate := eD;
+			type := t;
+			return self;		
+		)
 
 end Ticket

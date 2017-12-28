@@ -1,9 +1,21 @@
 class Event
 instance variables
-	public organizers: set of (Person);
-  place:Room;
-  name:Utils`string;
-  startDate:Utils`date;
-  endDate:Utils`date;
+	public organizers : set of (Person);
+  public place : Room;
+  public name : Utils`string;
+  public startDate : Utils`date;
+  public endDate : Utils`date;
+  
+ operations
+ -- constructor
+	public Event : Room * Utils`string * Utils`date * Utils`date ==> Event
+ 		Event(r, n, sD, eD) == (
+ 			organizers := {};
+ 			place := r;
+ 			name := n;
+ 			startDate := sD;
+ 			endDate := eD;
+ 			return self;
+ 		)
 
 end Event

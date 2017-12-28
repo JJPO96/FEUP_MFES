@@ -4,5 +4,16 @@ instance variables
 	event:Event;
   startTime:Utils`date;
   minToNotify:nat;
+  
+ operations 
+-- constructor
+	public Notification : Person * Event * nat ==> Notification
+ 		Notification(p,e,m) == (
+ 			person := p;
+ 			event := e;
+ 			startTime := event.startDate;
+ 			minToNotify := m;
+ 			return self;
+ 		)
 
 end Notification

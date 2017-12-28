@@ -2,10 +2,13 @@ class Room
 instance variables
   name:Utils`string;
   localization:Utils`string;
+
 operations
-	Room(n:Utils`string,local:Utils`string) res:Room == (
-		name := n;
-		localization	:= local;
-		return self;
-	)
+-- constructor
+	public Room : Utils`string * Utils`string ==> Room
+		Room(n, local) == (
+			name := n;
+			localization	:= local;
+			return self;
+		)
 end Room

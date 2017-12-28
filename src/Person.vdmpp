@@ -1,14 +1,21 @@
 class Person
 instance variables
-  participates:set of (FashionShow);
-  attendes:set of (Event);
-  directs:set of (RunwayShow);
-  displays:set of (PieceOfCloth);
-  creations:set of (PieceOfCloth);
-  name:Utils`string;
-  birthdate:Utils`date;
-  Attribute:Utils`string;
-  gender:Utils`gender;
-  isHandicapped:bool;
+  public name : Utils`string;
+  public birthdate : Utils`date;
+  public gender : Utils`gender;
+  public clothSize : Utils`clothSize;
+  public isHandicapped : bool;
 
+operations
+-- constructor
+	public Person : Utils`string * Utils`date *   Utils`gender * Utils`clothSize * bool ==> Person
+		Person(n, bD, g, cS, iH) == (
+			name := n;
+			birthdate := bD;
+			gender := g;
+			clothSize := cS;
+			isHandicapped := iH;
+			return self;
+		)
+	
 end Person
