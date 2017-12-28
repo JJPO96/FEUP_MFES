@@ -1,4 +1,4 @@
-class Presentation
+class Presentation is subclass of Event
 instance variables
   subject:Utils`string;
 

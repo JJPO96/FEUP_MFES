@@ -1,0 +1,26 @@
+class PieceOfCloth
+types
+instance variables
+	public creator:Person;
+  public size:Utils`clothSize;
+  public clothType:Utils`clothType;
+  
+operations
+	public PieceOfCloth : Person * Utils`clothSize * Utils`clothType ==> PieceOfCloth
+		PieceOfCloth(p,s,t) == (
+			creator := p;
+			size := s;
+			clothType := t;
+			return self;
+		);
+		
+	public getCreator: () ==> Person
+		getCreator() == return creator;
+		
+	public getSize: () ==> Utils`clothSize
+		getSize() == return size;
+	
+	public getClothType: () ==> Utils`clothType
+		getClothType() == return clothType;
+		
+end PieceOfCloth

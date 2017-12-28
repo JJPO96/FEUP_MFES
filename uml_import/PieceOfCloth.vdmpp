@@ -1,8 +1,0 @@
-class PieceOfCloth
-types
-instance variables
-	creator:Person;
-  size:Utils`clothSize;
-  ClothType:Utils`clothType;
-
-end PieceOfCloth

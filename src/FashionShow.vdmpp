@@ -1,4 +1,4 @@
-class FashionShow
+class FashionShow is subclass of Event
 instance variables
   name:Utils`string;
   place:Utils`string;

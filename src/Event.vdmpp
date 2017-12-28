@@ -1,6 +1,6 @@
 class Event
 instance variables
-	organizers: set of (Person);
+	public organizers: set of (Person);
   place:Room;
   name:Utils`string;
   startDate:Utils`date;

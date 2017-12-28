@@ -1,6 +1,0 @@
-class Room
-instance variables
-  name:Utils`string;
-  localization:Utils`string;
-
-end Room

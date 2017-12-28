@@ -6,10 +6,18 @@ values
 instance variables
 	model:Person;
 	cloth:PieceOfCloth;
-		inv exists cloth.creator in set runway.organizers;
 	runway:RunwayShow;
 operations
 -- TODO Define operations here
+	public ClothDisplayed: Person * PieceOfCloth * RunwayShow ==> ClothDisplayed
+		ClothDisplayed(p,c,r) == (
+			model := p;
+			cloth := c;
+			runway := r;
+			return self;
+		)
+		pre c.creator in set r.organizers;  
+		
 functions
 -- TODO Define functiones here
 traces

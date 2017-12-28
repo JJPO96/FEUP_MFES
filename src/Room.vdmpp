@@ -1,0 +1,11 @@
+class Room
+instance variables
+  name:Utils`string;
+  localization:Utils`string;
+operations
+	Room(n:Utils`string,local:Utils`string) res:Room == (
+		name := n;
+		localization	:= local;
+		return self;
+	)
+end Room
