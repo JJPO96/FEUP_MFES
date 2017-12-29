@@ -21,8 +21,6 @@ operations
 			rTest.addOccupant(pTest);
 			Utils`assertTrue(len rTest.occupants = 1);
 			Utils`assertTrue(rTest.occupants =  [pTest]);
-			rTest.emptyTheRoom();
-			Utils`assertTrue(rTest.occupants =  []);
 		);
 		
 	public static main: () ==> ()

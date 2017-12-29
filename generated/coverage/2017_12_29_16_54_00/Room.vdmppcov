@@ -43,7 +43,6 @@ operations
 -- make the room empty
 	public emptyTheRoom : () ==> ()
 		emptyTheRoom() ==
-			occupants := []
-			post occupants = [];
+			occupants := [];
  			
 end Room
