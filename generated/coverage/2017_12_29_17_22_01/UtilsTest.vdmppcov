@@ -1,0 +1,53 @@
+class UtilsTest
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+	str : Utils`string;
+	dat : Utils`date;
+	gen : Utils`string;
+	cSize : Utils`string;
+	cType : Utils`string;
+	tType : Utils`string;
+operations
+	public testString : () ==> ()
+		testString() == (
+			str := "Teste";
+			Utils`assertTrue(str = "Teste");
+		);
+			
+	public testDate : () ==> ()
+		testDate() == (
+			str := "Teste";
+			Utils`assertTrue(str = "Teste");
+			dat := mk_Utils`date(2017,12,29,17,15);
+			Utils`assertTrue(dat.year = 2017);
+			Utils`assertTrue(dat.month = 12);
+			Utils`assertTrue(dat.day = 29);
+			Utils`assertTrue(dat.hour = 17);
+			Utils`assertTrue(dat.minute = 15);
+			dat := mk_Utils`date(2017,11,29,17,15);
+			Utils`assertTrue(dat.year = 2017);
+			Utils`assertTrue(dat.month = 11);
+			Utils`assertTrue(dat.day = 29);
+			Utils`assertTrue(dat.hour = 17);
+			Utils`assertTrue(dat.minute = 15);
+			dat := mk_Utils`date(2016,2,29,17,15);
+			Utils`assertTrue(dat.year = 2016);
+			Utils`assertTrue(dat.month = 2);
+			Utils`assertTrue(dat.day = 29);
+			Utils`assertTrue(dat.hour = 17);
+			Utils`assertTrue(dat.minute = 15);
+		);
+		
+	public static main: () ==> ()
+		main() == (
+			new UtilsTest().testString();
+			new UtilsTest().testDate();
+		);
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end UtilsTest

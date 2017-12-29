@@ -1,0 +1,46 @@
+class Event
+instance variables
+	public organizers : set of (Person);
+  public place : Room;
+  public name : Utils`string;
+  public startDate : Utils`date;
+  public endDate : Utils`date;
+ 
+ operations
+ -- constructor
+	public Event : Room * Utils`string * Utils`date * Utils`date ==> Event
+ 		Event(r, n, sD, eD) == (
+ 			organizers := {};
+ 			place := r;
+ 			name := n;
+ 			startDate := sD;
+ 			endDate := eD;
+ 			return self;
+ 		);
+ 
+-- set organizers		
+ 	public setOrganizers : set of (Person) ==> ()
+ 		setOrganizers(o) ==
+ 			organizers := o;
+ 	
+ -- set place
+ 	public setPlace : Room ==> ()
+ 		setPlace (r) ==
+ 			place := r;
+ 			
+-- set name
+ 	public setName : Utils`string ==> ()
+ 		setName(n) ==
+ 			name := n;
+			
+-- set start date
+	public setStartDate : Utils`date ==> ()
+		setStartDate(d) ==
+			startDate := d;
+			
+-- set end date
+	public setEndDate : Utils`date ==> ()
+		setEndDate(d) ==
+			endDate := d;
+
+end Event

@@ -1,0 +1,41 @@
+class FashionShow
+instance variables 
+	public name : Utils`string;
+  public place : Utils`string;
+  public startDate : Utils`date;
+  public endDate : Utils`date;
+  public capacity : nat1;
+
+operations
+-- constructor
+	public FashionShow : Utils`string * Utils`string * Utils`date * Utils`date * nat1 ==> FashionShow
+		FashionShow(n, p, sD, eD, cap) == (
+			name := n;
+			place := p;
+			startDate := sD;
+			endDate := eD;
+			capacity := cap;
+			return self;		
+		);
+		
+-- set name
+ 	public setName : Utils`string ==> ()
+ 		setName(n) ==
+ 			name := n;
+ 			
+-- set place
+ 	public setPlace : Utils`string ==> ()
+ 		setPlace(p) ==
+ 			place := p;
+			
+-- set start date
+	public setStartDate : Utils`date ==> ()
+		setStartDate(d) ==
+			startDate := d;
+			
+-- set end date
+	public setEndDate : Utils`date ==> ()
+		setEndDate(d) ==
+			endDate := d;
+
+end FashionShow

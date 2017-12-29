@@ -1,0 +1,13 @@
+class PersonTest
+types
+-- TODO Define types here
+values
+instance variables
+	pTest : Person := new Person("Test Person", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, false);
+operations
+-- TODO Define operations here
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end PersonTest

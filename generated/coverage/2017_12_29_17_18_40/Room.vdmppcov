@@ -1,0 +1,49 @@
+class Room
+instance variables
+  public name : Utils`string;
+  public localization : Utils`string;
+	public capacity : nat1;
+	public occupants : seq of Person;
+
+operations
+-- constructor
+	public Room : Utils`string * Utils`string * nat1 ==> Room
+		Room(n, local, cap) == (
+			name := n;
+			localization	:= local;
+			capacity := cap;
+			occupants := [];
+			return self;
+		);
+		
+-- set name
+ 	public setName : Utils`string ==> ()
+ 		setName(n) ==
+ 			name := n;
+ 			
+-- set localization
+ 	public setLocalization : Utils`string ==> ()
+ 		setLocalization(l) ==
+ 			localization := l;
+ 			
+-- set capacity
+ 	public setCapacity : nat1 ==> ()
+ 		setCapacity(c) ==
+ 			capacity := c
+ 			pre c >= len occupants;
+ 			
+-- add a person to the occupants list
+	public addOccupant : Person ==> ()
+		addOccupant(p) ==
+			occupants := occupants ^ [p]
+			pre len occupants < capacity
+			post len occupants <= capacity and 
+							 occupants = occupants~ ^ [p];
+			
+-- make the room empty
+	public emptyTheRoom : () ==> ()
+		emptyTheRoom() ==
+			occupants := []
+			post occupants = [];
+ 			
+end Room

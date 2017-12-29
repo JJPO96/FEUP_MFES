@@ -1,6 +1,6 @@
 class Presentation is subclass of Event
 instance variables
-  public subject:Utils`string;
+  subject:Utils`string;
   
 operations
 -- constructor

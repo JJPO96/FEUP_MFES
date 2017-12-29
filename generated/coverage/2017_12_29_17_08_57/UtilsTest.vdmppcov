@@ -1,0 +1,19 @@
+class UtilsTest
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+	str : Utils`string;
+	dat : Utils`date;
+	gen : Utils`string;
+	cSize : Utils`string;
+	cType : Utils`string;
+	tType : Utils`string;
+operations
+-- TODO Define operations here
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end UtilsTest
