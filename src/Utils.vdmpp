@@ -4,6 +4,8 @@ types
 	public date :: year : nat
 				         month: nat1
 				 				 day : nat1
+				 				 hour : nat
+				 				 minute : nat
 				 inv d == d.month <= 12 and
 								  d.day <= DaysOfMonth(d.year, d.month);
 	public gender = <Male> | <Female>;
@@ -16,6 +18,10 @@ instance variables
 -- TODO Define instance variables here
 operations
 -- TODO Define operations here
+
+	private assertTrue: bool ==> ()
+		assertTrue(cond) == return
+		pre cond;
 functions
 -- TODO Define functiones here
 -- function that returns the number of days in a month

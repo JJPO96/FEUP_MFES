@@ -1,14 +1,16 @@
 class Room
 instance variables
-  name:Utils`string;
-  localization:Utils`string;
+  name : Utils`string;
+  localization : Utils`string;
+	capacity : nat1;
 
 operations
 -- constructor
-	public Room : Utils`string * Utils`string ==> Room
-		Room(n, local) == (
+	public Room : Utils`string * Utils`string * nat1 ==> Room
+		Room(n, local, cap) == (
 			name := n;
 			localization	:= local;
+			capacity := cap;
 			return self;
 		);
 		
@@ -21,5 +23,10 @@ operations
  	public setLocalization : Utils`string ==> ()
  		setLocalization(l) ==
  			localization := l;
+ 			
+-- set capacity
+ 	public setCapacity : nat1 ==> ()
+ 		setCapacity(c) ==
+ 			capacity := c;
  			
 end Room

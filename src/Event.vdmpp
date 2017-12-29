@@ -5,7 +5,7 @@ instance variables
   public name : Utils`string;
   public startDate : Utils`date;
   public endDate : Utils`date;
-  
+ 
  operations
  -- constructor
 	public Event : Room * Utils`string * Utils`date * Utils`date ==> Event
