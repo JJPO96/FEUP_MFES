@@ -1,0 +1,36 @@
+class PersonAttendsEvent
+instance variables
+	public person:Person;
+	public event:Event;
+  public notification:Notification;
+ 
+ operations 
+-- constructor
+	public PersonAttendsEvent : Person * Event * Notification ==> PersonAttendsEvent
+ 		PersonAttendsEvent(p,e,n) == (
+ 			person := p;
+ 			event := e;
+			notification := n;
+ 			return self;
+ 		);
+
+-- set Person
+ 	public setPerson : Person ==> ()
+ 		setPerson(p) ==
+ 			person := p;
+ 			
+-- set Event
+ 	public setEvent : Event ==> ()
+ 		setEvent(e) == 
+ 			event := e;
+ 			
+-- set Notification	
+ 	public setNotification : Notification ==> ()
+ 		setNotification(n) == 
+ 			notification := n;
+ 			
+ -- Get Event Stating Time
+ 	public getStartTime: Notification ==> Utils`date
+ 		getStartTime(n) == return n.startTime;
+
+end PersonAttendsEvent

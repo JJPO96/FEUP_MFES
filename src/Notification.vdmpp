@@ -1,9 +1,9 @@
 class Notification
 instance variables
-	person:Person;
-	event:Event;
-  startTime:Utils`date;
-  minToNotify:nat;
+	public person:Person;
+	public event:Event;
+  public startTime:Utils`date;
+  public minToNotify:nat;
   
  operations 
 -- constructor
