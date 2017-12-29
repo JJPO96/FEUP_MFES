@@ -4,19 +4,13 @@ types
 values
 -- TODO Define values here
 instance variables
-	rTest:Room := new Room("Sala1","Edificio A, Piso 2",50);
+	rTest:Room := new Room("sala1","Edificio A, Piso 2",50);
 operations
 	private testRoom : () ==> ()
 		testRoom() == (
 			Utils`assertTrue(rTest.name = "Sala1");
-		  Utils`assertTrue(rTest.localization = "Edificio A, Piso 2");
+			Utils`assertTrue(rTest.localization = "Edificio A, Piso 2");
 			Utils`assertTrue(rTest.capacity = 50);
-			rTest.setName("Sala11");
-			Utils`assertTrue(rTest.name = "Sala11");
-			rTest.setLocalization("Edificio B, Piso 1");
-			Utils`assertTrue(rTest.localization = "Edificio B, Piso 1");
-			rTest.setCapacity(5);
-			Utils`assertTrue(rTest.capacity = 5);
 		);
 		
 	public static main: () ==> ()
