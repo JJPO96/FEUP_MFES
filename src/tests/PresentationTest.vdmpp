@@ -4,16 +4,22 @@ types
 values
 -- TODO Define values here
 instance variables
-	rTest:Room := new Room("Sala1","Edificio A, Piso 2",50);
-	pTest:Presentation := new Presentation(rTest, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
+	rTest1:Room := new Room("Sala1","Edificio A, Piso 2",50);
+	rTest2:Room := new Room("Sala2","Edificio B, Piso 3",5);
+	pTest:Presentation := new Presentation(rTest1, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
 operations
 	private testPresentation : () ==> ()
 		testPresentation() == (
-			Utils`assertTrue(pTest.place = rTest);
+			Utils`assertTrue(pTest.place = rTest1);
 			Utils`assertTrue(pTest.name = "NameTest");
 			Utils`assertTrue(pTest.startDate = mk_Utils`date(2017,12,15,16,00));
 			Utils`assertTrue(pTest.endDate = mk_Utils`date(2017,12,15,17,30));
 			Utils`assertTrue(pTest.subject = "testSubject");
+			pTest.setPlace(rTest2);
+			Utils`assertTrue(pTest.place = rTest2);
+			pTest.setName("nameTest1");
+			Utils`assertTrue(pTest.name = "nameTest1");
+			
 		);
 		
 	public static main: () ==> ()
