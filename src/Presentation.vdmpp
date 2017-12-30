@@ -4,9 +4,9 @@ instance variables
   
 operations
 -- constructor
-	public Presentation : Room * Utils`string * Utils`date * Utils`date * Utils`string ==> Presentation
-	Presentation(r, n, sD, eD, s) == (
-		organizers := [];
+	public Presentation : seq1 of Person * Room * Utils`string * Utils`date * Utils`date * Utils`string ==> Presentation
+	Presentation(sP, r, n, sD, eD, s) == (
+		organizers := sP;
 		place := r;
 		name := n;
 		startDate := sD;
