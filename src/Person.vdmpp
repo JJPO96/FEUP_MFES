@@ -6,6 +6,7 @@ instance variables
   public clothSize : Utils`clothSize;
   public handicapped : bool;
   public eventsAttending : seq of (Event);
+  public ticketToShow : map Ticket to FashionShow;
 
 operations
 -- constructor
@@ -17,6 +18,7 @@ operations
 			clothSize := cS;
 			handicapped := iH;
 			eventsAttending := [];
+			ticketToShow := { |-> };
 			return self;
 		);
 		
@@ -50,5 +52,18 @@ operations
 		addEvent(e) == 
 			eventsAttending := eventsAttending ^ [e]
 			post eventsAttending = eventsAttending~ ^ [e];
+			
+--set ticketToShow
+	public setTicketToShow : map Ticket to FashionShow ==> ()
+		setTicketToShow(e) == 
+			ticketToShow := e
+			post ticketToShow = e;
+			
+--add ticket and show to ticketToShow
+	public addTicketShow : Ticket * FashionShow ==> ()
+		addTicketShow(t,s) == 
+			ticketToShow := ticketToShow munion {t |-> s}
+			pre not exists tt in set dom ticketToShow & (tt = t and ticketToShow(tt) = s)
+			post ticketToShow = ticketToShow~ munion {t |-> s};
 	
 end Person

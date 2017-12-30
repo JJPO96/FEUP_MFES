@@ -8,6 +8,10 @@ instance variables
 	rTest2:Room := new Room("Sala2","Edificio B, Piso 3",5);
 	preTest:Presentation := new Presentation(rTest1, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
 	runTest:RunwayShow := new RunwayShow(rTest2, "PreTest",  mk_Utils`date(2017,12,15,18,00),  mk_Utils`date(2017,12,15,19,30), "testTheme");
+	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), 500);
+	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), 200);
+	ticket1:Ticket := new Ticket(pTest, fasTest1, mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), <Worker>);
+	ticket2:Ticket := new Ticket(pTest, fasTest2, mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), <Worker>);
 	
 operations
 -- TODO Define operations here
@@ -45,8 +49,16 @@ operations
 		--test setHandicapped
 			pTest.setHandicapped(true);
 			Utils`assertTrue(pTest.handicapped = true);
+		
+		--test setTicketToShow
+			pTest.setTicketToShow({ticket1 |-> fasTest1});
+			Utils`assertTrue(pTest.ticketToShow = {ticket1 |-> fasTest1});
 			
+		--test addTicketShow()
+			pTest.addTicketShow(ticket2, fasTest2);
+			Utils`assertTrue(pTest.ticketToShow = {ticket1 |-> fasTest1, ticket2 |-> fasTest2});
 			
+			--pTest.addTicketShow(ticket1, fasTest1);
 		);
 		
 	public static main: () ==> ()

@@ -10,6 +10,7 @@ instance variables
 	cSize : Utils`string;
 	cType : Utils`string;
 	tType : Utils`string;
+	testSeq : seq of nat := [1,2,3,4,5];
 operations
 	public testString : () ==> ()
 		testString() == (
@@ -50,11 +51,19 @@ operations
 			Utils`assertTrue(dat.minute = 15);
 		);
 		
+	public testExistInSeq : () ==> ()
+		testExistInSeq() == (
+			Utils`assertTrue(Utils`existsInSeq[nat](1,testSeq) = true);
+			Utils`assertTrue(Utils`existsInSeq[nat](10,testSeq) = false);
+		);	
 	public static main: () ==> ()
 		main() == (
 			new UtilsTest().testString();
 			new UtilsTest().testDate();
+			new UtilsTest().testExistInSeq();
 		);
+		
+		
 functions
 -- TODO Define functiones here
 traces
