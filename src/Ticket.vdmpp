@@ -5,7 +5,10 @@ instance variables
   public startDate : Utils`date;
   public endDate : Utils`date;
   public type : Utils`ticketType;
-  
+
+-- invariants
+inv startDate <> endDate;
+
 operations
 -- constructor
 	public Ticket : Person * FashionShow * Utils`date * Utils`date * Utils`ticketType ==> Ticket

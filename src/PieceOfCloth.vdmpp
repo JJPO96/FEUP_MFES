@@ -4,7 +4,7 @@ instance variables
 	public creator:Person;
   public size:Utils`clothSize;
   public clothType:Utils`clothType;
-  
+
 operations
 -- constructor
 	public PieceOfCloth : Person * Utils`clothSize * Utils`clothType ==> PieceOfCloth

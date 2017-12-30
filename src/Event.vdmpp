@@ -5,10 +5,11 @@ instance variables
   public name : Utils`string;
   public startDate : Utils`date;
   public endDate : Utils`date;
-  
-  
+ 
+ 
   -- invariants
   inv len organizers >= 0;
+	inv startDate <> endDate;
  
  operations
  -- constructor

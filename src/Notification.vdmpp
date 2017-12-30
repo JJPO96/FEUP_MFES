@@ -4,7 +4,10 @@ instance variables
 	public event:Event;
   public startTime:Utils`date;
   public minToNotify:nat;
-  
+ 
+ -- invariants
+inv minToNotify < startTime.minute;
+
  operations 
 -- constructor
 	public Notification : Person * Event * nat ==> Notification

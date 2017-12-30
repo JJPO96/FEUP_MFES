@@ -6,6 +6,9 @@ instance variables
   public endDate : Utils`date;
   public capacity : nat1;
 
+-- invariants
+inv startDate <> endDate;
+
 operations
 -- constructor
 	public FashionShow : Utils`string * Utils`string * Utils`date * Utils`date * nat1 ==> FashionShow
