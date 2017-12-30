@@ -6,7 +6,7 @@ operations
 -- constructor
 	public Presentation : Room * Utils`string * Utils`date * Utils`date * Utils`string ==> Presentation
 	Presentation(r, n, sD, eD, s) == (
-		organizers := {};
+		organizers := [];
 		place := r;
 		name := n;
 		startDate := sD;

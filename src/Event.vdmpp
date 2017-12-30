@@ -1,6 +1,6 @@
 class Event
 instance variables
-	public organizers : set of (Person);
+	public organizers : seq of (Person);
   public place : Room;
   public name : Utils`string;
   public startDate : Utils`date;
@@ -10,7 +10,7 @@ instance variables
  -- constructor
 	public Event : Room * Utils`string * Utils`date * Utils`date ==> Event
  		Event(r, n, sD, eD) == (
- 			organizers := {};
+ 			organizers := [];
  			place := r;
  			name := n;
  			startDate := sD;
@@ -19,9 +19,14 @@ instance variables
  		);
  
 -- set organizers		
- 	public setOrganizers : set of (Person) ==> ()
+ 	public setOrganizers : seq of (Person) ==> ()
  		setOrganizers(o) ==
  			organizers := o;
+ 
+-- add organizer	
+ 	public addOrganizer : Person ==> ()
+ 		addOrganizer(p) == 
+	 		organizers := organizers ^ [p];
  	
  -- set place
  	public setPlace : Room ==> ()
@@ -42,5 +47,10 @@ instance variables
 	public setEndDate : Utils`date ==> ()
 		setEndDate(d) ==
 			endDate := d;
+			
+-- end event and empty the room
+	public endEvent : () ==> ()
+		endEvent() ==
+			place.emptyTheRoom();
 
 end Event
