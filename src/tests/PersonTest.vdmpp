@@ -4,8 +4,55 @@ types
 values
 instance variables
 	pTest : Person := new Person("Test Person", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, false);
+	rTest1:Room := new Room("Sala1","Edificio A, Piso 2",50);
+	rTest2:Room := new Room("Sala2","Edificio B, Piso 3",5);
+	preTest:Presentation := new Presentation(rTest1, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
+	runTest:RunwayShow := new RunwayShow(rTest2, "PreTest",  mk_Utils`date(2017,12,15,18,00),  mk_Utils`date(2017,12,15,19,30), "testTheme");
+	
 operations
 -- TODO Define operations here
+	private testPerson : () ==> ()
+		testPerson() == (
+		--test constructor
+			Utils`assertTrue(pTest.name = "Test Person");
+		  Utils`assertTrue(pTest.birthdate = mk_Utils`date(1996,12,15,16,00));
+			Utils`assertTrue(pTest.gender = <Male>);
+			Utils`assertTrue(pTest.clothSize = <L>);
+			Utils`assertTrue(pTest.handicapped = false);
+		
+		--test setName()
+			pTest.setName("Test Person2");
+			Utils`assertTrue(pTest.name = "Test Person2");
+		
+		--test setBirthdate()
+			pTest.setBirthdate(mk_Utils`date(1995,12,15,16,00));
+			Utils`assertTrue(pTest.birthdate = mk_Utils`date(1995,12,15,16,00));
+			
+		--test setGender()
+			pTest.setGender(<Female>);
+			Utils`assertTrue(pTest.gender = <Female>);
+			
+		--test setClothsize()
+			pTest.setClothSize(<XS>);
+			Utils`assertTrue(pTest.clothSize = <XS>);
+			
+		--test addEvent()
+			pTest.addEvent(preTest);
+			pTest.addEvent(runTest);
+			Utils`assertTrue(pTest.eventsAttending = [preTest, runTest]);
+			Utils`assertTrue(len pTest.eventsAttending = 2);
+			
+		--test setHandicapped
+			pTest.setHandicapped(true);
+			Utils`assertTrue(pTest.handicapped = true);
+			
+			
+		);
+		
+	public static main: () ==> ()
+		main() == (
+			new PersonTest().testPerson();
+		);
 functions
 -- TODO Define functiones here
 traces

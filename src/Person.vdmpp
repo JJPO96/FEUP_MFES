@@ -41,13 +41,14 @@ operations
 			clothSize := cS;
 	
 --set handicapped
-	public isHandicapped : bool ==> ()
-		isHandicapped(iH) ==		
+	public setHandicapped : bool ==> ()
+		setHandicapped(iH) ==		
 			handicapped := iH;
 			
 --add event to eventsAttending
 	public addEvent : Event ==> ()
 		addEvent(e) == 
-			eventsAttending := eventsAttending ^ [e];
+			eventsAttending := eventsAttending ^ [e]
+			post eventsAttending = eventsAttending~ ^ [e];
 	
 end Person

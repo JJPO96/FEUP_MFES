@@ -11,6 +11,7 @@ operations
 			RoomTest`main();
 			UtilsTest`main();
 			PresentationTest`main();
+			PersonTest`main();
 		);
 functions
 -- TODO Define functiones here
