@@ -4,7 +4,10 @@ instance variables
   public localization : Utils`string;
 	public capacity : nat1;
 	public occupants : seq of Person;
-
+	
+-- invariants
+  inv len occupants >= 0;
+  
 operations
 -- constructor
 	public Room : Utils`string * Utils`string * nat1 ==> Room
