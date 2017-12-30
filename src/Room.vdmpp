@@ -6,7 +6,6 @@ instance variables
 	public occupants : seq of Person;
 	
 -- invariants
-  inv len occupants >= 0;
   inv len occupants < capacity;
   
 operations

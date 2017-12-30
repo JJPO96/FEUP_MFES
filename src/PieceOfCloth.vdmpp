@@ -5,6 +5,9 @@ instance variables
   public size:Utils`clothSize;
   public clothType:Utils`clothType;
 
+--invariants
+-- inv creator.ticketToShow.type = <designer>;
+
 operations
 -- constructor
 	public PieceOfCloth : Person * Utils`clothSize * Utils`clothType ==> PieceOfCloth

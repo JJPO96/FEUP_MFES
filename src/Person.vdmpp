@@ -8,8 +8,6 @@ instance variables
   public eventsAttending : seq of (Event);
   public ticketToShow : map Ticket to FashionShow;
 
--- invariants
-inv len eventsAttending  >= 0;
 
 operations
 -- constructor

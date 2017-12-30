@@ -8,7 +8,6 @@ instance variables
  
  
   -- invariants
-  inv len organizers >= 0;
 	inv startDate <> endDate;
  
  operations
