@@ -24,7 +24,7 @@ operations
 		  Utils`assertTrue(pTest.birthdate = mk_Utils`date(1996,12,15,16,00));
 			Utils`assertTrue(pTest.gender = <Male>);
 			Utils`assertTrue(pTest.clothSize = <L>);
-			Utils`assertTrue(pTest.handicapped = false);
+			Utils`assertTrue(pTest.isDesigner = false);
 		
 		--test setName()
 			pTest.setName("Test Person2");
@@ -48,9 +48,9 @@ operations
 			Utils`assertTrue(pTest.eventsAttending = [preTest, runTest]);
 			Utils`assertTrue(len pTest.eventsAttending = 2);
 			
-		--test setHandicapped
-			pTest.setHandicapped(true);
-			Utils`assertTrue(pTest.handicapped = true);
+		--test setIsDesigner
+			pTest.setIsDesigner(true);
+			Utils`assertTrue(pTest.isDesigner = true);
 		
 		--test setTicketToShow
 			pTest.setTicketToShow({ticket1 |-> fasTest1});

@@ -5,6 +5,8 @@ instance variables
   public startTime:Utils`date;
   public minToNotify:nat;
 
+	inv event.startDate = startTime;
+
  operations 
 -- constructor
 	public Notification : Person * Event * nat ==> Notification

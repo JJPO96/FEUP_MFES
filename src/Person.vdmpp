@@ -4,7 +4,7 @@ instance variables
   public birthdate : Utils`date;
   public gender : Utils`gender;
   public clothSize : Utils`clothSize;
-  public handicapped : bool;
+  public isDesigner : bool;
   public eventsAttending : seq of (Event);
   public ticketToShow : map Ticket to FashionShow;
 
@@ -12,12 +12,12 @@ instance variables
 operations
 -- constructor
 	public Person : Utils`string * Utils`date * Utils`gender * Utils`clothSize * bool ==> Person
-		Person(n, bD, g, cS, iH) == (
+		Person(n, bD, g, cS, iD) == (
 			name := n;
 			birthdate := bD;
 			gender := g;
 			clothSize := cS;
-			handicapped := iH;
+			isDesigner := iD;
 			eventsAttending := [];
 			ticketToShow := { |-> };
 			return self;
@@ -43,10 +43,10 @@ operations
 		setClothSize(cS)	==
 			clothSize := cS;
 	
---set handicapped
-	public setHandicapped : bool ==> ()
-		setHandicapped(iH) ==		
-			handicapped := iH;
+--set is designer
+	public setIsDesigner : bool ==> ()
+		setIsDesigner(iD) ==		
+			isDesigner := iD;
 			
 --add event to eventsAttending
 	public addEvent : Event ==> ()

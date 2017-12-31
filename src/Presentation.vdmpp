@@ -9,8 +9,8 @@ operations
 		organizers := sP;
 		place := r;
 		name := n;
-		startDate := sD;
-		endDate := eD;
+		atomic(startDate := sD;
+		endDate := eD;);
 		subject := s;
 		return self;		
 	);

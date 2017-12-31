@@ -6,7 +6,7 @@ instance variables
   public clothType:Utils`clothType;
 
 --invariants
--- inv creator.ticketToShow.type = <designer>;
+	inv creator.isDesigner;
 
 operations
 -- constructor

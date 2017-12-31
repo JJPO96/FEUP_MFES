@@ -5,9 +5,8 @@ instance variables
   public name : Utils`string;
   public startDate : Utils`date;
   public endDate : Utils`date;
- 
   -- invariants
-	inv startDate <> endDate;
+	inv Utils`isOldestDate(startDate, endDate);
  
  operations
  -- constructor
@@ -16,8 +15,8 @@ instance variables
  			organizers := sP;
  			place := r;
  			name := n;
- 			startDate := sD;
- 			endDate := eD;
+ 			atomic(startDate := sD;
+ 			endDate := eD;);
  			return self;
  		);
  
