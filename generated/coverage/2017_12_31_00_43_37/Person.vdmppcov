@@ -1,0 +1,70 @@
+class Person
+instance variables
+  public name : Utils`string;
+  public birthdate : Utils`date;
+  public gender : Utils`gender;
+  public clothSize : Utils`clothSize;
+  public handicapped : bool;
+  public eventsAttending : seq of (Event);
+  public ticketToShow : map Ticket to FashionShow;
+
+
+operations
+-- constructor
+	public Person : Utils`string * Utils`date * Utils`gender * Utils`clothSize * bool ==> Person
+		Person(n, bD, g, cS, iH) == (
+			name := n;
+			birthdate := bD;
+			gender := g;
+			clothSize := cS;
+			handicapped := iH;
+			eventsAttending := [];
+			ticketToShow := { |-> };
+			return self;
+		);
+		
+--set name		
+	public setName : Utils`string ==> ()
+		setName(n) ==
+			name := n;
+			
+--set birthdate
+	public setBirthdate : Utils`date ==> ()
+		setBirthdate(bD) ==
+			birthdate := bD;
+			
+--set gender
+	public setGender : Utils`gender ==> ()
+		setGender(g) ==
+			gender := g;
+			
+-- set cloth size
+	public setClothSize : Utils`clothSize ==> ()
+		setClothSize(cS)	==
+			clothSize := cS;
+	
+--set handicapped
+	public setHandicapped : bool ==> ()
+		setHandicapped(iH) ==		
+			handicapped := iH;
+			
+--add event to eventsAttending
+	public addEvent : Event ==> ()
+		addEvent(e) == 
+			eventsAttending := eventsAttending ^ [e]
+			post eventsAttending = eventsAttending~ ^ [e];
+			
+--set ticketToShow
+	public setTicketToShow : map Ticket to FashionShow ==> ()
+		setTicketToShow(e) == 
+			ticketToShow := e
+			post ticketToShow = e;
+			
+--add ticket and show to ticketToShow
+	public addTicketShow : Ticket * FashionShow ==> ()
+		addTicketShow(t,s) == 
+			ticketToShow := ticketToShow munion {t |-> s}
+			pre not exists tt in set dom ticketToShow & (tt = t and ticketToShow(tt) = s)
+			post ticketToShow = ticketToShow~ munion {t |-> s};
+	
+end Person

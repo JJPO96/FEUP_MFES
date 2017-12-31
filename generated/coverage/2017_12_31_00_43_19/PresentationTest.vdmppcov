@@ -15,7 +15,7 @@ operations
 	private testPresentation : () ==> ()
 		testPresentation() == (
 		--test constructor
-			Utils`assertTrue(pTest.organizers = [perTest1]);
+			Utils`assertTrue(pTest.organizers = orgTest1);
 			Utils`assertTrue(pTest.place = rTest1);
 			Utils`assertTrue(pTest.name = "NameTest");
 			Utils`assertTrue(pTest.startDate = mk_Utils`date(2017,12,15,16,00));

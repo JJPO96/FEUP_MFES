@@ -1,0 +1,23 @@
+class Presentation is subclass of Event
+instance variables
+  public subject:Utils`string;
+  
+operations
+-- constructor
+	public Presentation : seq1 of Person * Room * Utils`string * Utils`date * Utils`date * Utils`string ==> Presentation
+	Presentation(sP, r, n, sD, eD, s) == (
+		organizers := sP;
+		place := r;
+		name := n;
+		startDate := sD;
+		endDate := eD;
+		subject := s;
+		return self;		
+	);
+
+-- set subject	
+	public setSubject : Utils`string ==> ()
+		setSubject(s) ==
+			subject := s;
+
+end Presentation
