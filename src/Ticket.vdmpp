@@ -8,18 +8,21 @@ instance variables
 
 -- invariants
 inv Utils`isOldestDate(startDate, endDate);
-
+inv Utils`isOldestDate(show.startDate, startDate) or show.startDate = startDate;
+inv Utils`isOldestDate(endDate, show.endDate) or endDate = show.endDate;
+inv if type = <Designer> then holder.isDesigner else true;
+ 
 operations
 -- constructor
 	public Ticket : Person * FashionShow * Utils`date * Utils`date * Utils`ticketType ==> Ticket
 		Ticket(p, s, sD, eD, t) == (
 			holder := p;
- 			show := s;
+ 			atomic(show := s;
  			startDate := sD;
- 			endDate := eD;
+ 			endDate := eD;);
 			type := t;
 			p.addTicketShow(self,s);
-			return self;		
+			return self;	
 		);
 		
 -- set ticket holder

@@ -27,8 +27,8 @@ instance variables
  -- set event
  	public setEvent : Event ==> ()
  		setEvent(e) == (
- 			event := e;
- 			startTime := event.startDate;
+ 			atomic(event := e;
+ 			startTime := e.startDate;);
  		)
  		post event.startDate = startTime;
 

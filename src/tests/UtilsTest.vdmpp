@@ -57,6 +57,14 @@ operations
 			Utils`assertTrue(Utils`isOldestDate(mk_Utils`date(2015,2,28,16,15),mk_Utils`date(2015,2,28,17,15)));
 			Utils`assertTrue(Utils`isOldestDate(mk_Utils`date(2015,2,28,17,14),mk_Utils`date(2015,2,28,17,15)));
 			
+			Utils`assertTrue(Utils`coincDate(mk_Utils`date(2015,2,28,17,14),mk_Utils`date(2015,2,28,17,15),mk_Utils`date(2015,2,28,17,14),mk_Utils`date(2015,2,28,17,15)));
+			Utils`assertTrue(not Utils`coincDate(mk_Utils`date(2015,2,28,17,14),mk_Utils`date(2015,2,28,17,15),mk_Utils`date(2015,2,28,17,15),mk_Utils`date(2015,2,28,17,17)));
+			Utils`assertTrue(not Utils`coincDate(mk_Utils`date(2015,2,28,17,14),mk_Utils`date(2015,2,28,17,15),mk_Utils`date(2015,2,28,17,16),mk_Utils`date(2015,2,28,17,17)));
+			
+			Utils`assertTrue(Utils`coincDate(mk_Utils`date(2015,2,28,17,14),mk_Utils`date(2015,2,28,17,15),mk_Utils`date(2015,2,28,17,14),mk_Utils`date(2015,2,28,17,15)));
+			Utils`assertTrue(not Utils`coincDate(mk_Utils`date(2015,2,28,17,15),mk_Utils`date(2015,2,28,17,17),mk_Utils`date(2015,2,28,17,14),mk_Utils`date(2015,2,28,17,15)));
+			Utils`assertTrue(not Utils`coincDate(mk_Utils`date(2015,2,28,17,16),mk_Utils`date(2015,2,28,17,17),mk_Utils`date(2015,2,28,17,14),mk_Utils`date(2015,2,28,17,15)));
+			
 		);
 		
 	public testExistInSeq : () ==> ()

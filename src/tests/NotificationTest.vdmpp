@@ -5,8 +5,48 @@ values
 -- TODO Define values here
 instance variables
 -- TODO Define instance variables here
+	perTest1:Person := new Person("Test Person1", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, false);
+	perTest2:Person := new Person("Test Person2", mk_Utils`date(1991,12,15,16,00), <Female>, <S>, false);
+	perTest3:Person := new Person("Test Person3", mk_Utils`date(1986,12,15,16,00), <Male>, <XL>, true);
+	orgTest1: seq of (Person) := [perTest1, perTest2, perTest3]; 
+	roomTest1:Room := new Room("Sala1","Edificio A, Piso 2",50);
+	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), 500);
+	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), 200);
+	rTest1:RunwayShow := new RunwayShow(fasTest1, [perTest1],roomTest1, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testTheme");
+	rTest2:RunwayShow := new RunwayShow(fasTest1, [perTest1],roomTest1, "NameTest",  mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,15,17,30), "testTheme");
+	nTest:Notification := new Notification(perTest1,rTest1,15);
+
 operations
--- TODO Define operations here
+	--test constructor
+		
+	private testNotification : () ==> ()
+		testNotification() == (
+			--test contructor
+				Utils`assertTrue(nTest.person = perTest1);
+				Utils`assertTrue(nTest.event = rTest1);
+				Utils`assertTrue(nTest.startTime = mk_Utils`date(2017,12,15,16,00));
+				Utils`assertTrue(nTest.minToNotify = 15);
+			
+			--test setPerson()
+				nTest.setPerson(perTest2);
+				Utils`assertTrue(nTest.person = perTest2);
+			
+			--test setEvent()
+				nTest.setEvent(rTest2);
+				Utils`assertTrue(nTest.event = rTest2);
+				Utils`assertTrue(nTest.startTime = mk_Utils`date(2017,12,15,8,00));
+				
+			--test setMinToNotify()
+				nTest.setMinToNotify(20);
+				Utils`assertTrue(nTest.minToNotify = 20);
+				
+				
+		);
+		
+	public static main: () ==> ()
+		main() == (
+			new NotificationTest().testNotification();
+		);
 functions
 -- TODO Define functiones here
 traces

@@ -1,5 +1,6 @@
 class Event
 instance variables
+	public fashionShow : FashionShow;
 	public organizers : seq1 of (Person);
   public place : Room;
   public name : Utils`string;
@@ -10,8 +11,9 @@ instance variables
  
  operations
  -- constructor
-	public Event : seq1 of Person * Room * Utils`string * Utils`date * Utils`date ==> Event
- 		Event(sP, r, n, sD, eD) == (
+	public Event : FashionShow * seq1 of Person * Room * Utils`string * Utils`date * Utils`date ==> Event
+ 		Event(fS, sP, r, n, sD, eD) == (
+ 			fashionShow := fS;
  			organizers := sP;
  			place := r;
  			name := n;
@@ -19,6 +21,11 @@ instance variables
  			endDate := eD;);
  			return self;
  		);
+ 
+-- set fashionShow		
+ 	public setFashionShow : FashionShow ==> ()
+ 		setFashionShow(f) ==
+ 			fashionShow := f;
  
 -- set organizers		
  	public setOrganizers : seq1 of (Person) ==> ()

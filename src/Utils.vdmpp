@@ -52,6 +52,12 @@ public static existsInSeq[@T](e:@T, s: seq of @T) res: bool ==
 		else if d1.minute <> d2.minute then d1.minute < d2.minute
 		else false;
 
+-- checks if pair (sd1, ed1) is coincident with (sd2, ed2) are coincident
+	public static coincDate(sd1:date, ed1:date, sd2:date, ed2:date) res : bool ==
+		if isOldestDate(ed1,sd2) or ed1 = sd2 or isOldestDate(ed2,sd1) or ed2 = sd1 then false
+		else true;
+
+
 traces
 -- TODO Define Combinatorial Test Traces here
 end Utils

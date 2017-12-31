@@ -8,10 +8,10 @@ instance variables
 	rTest1:Room := new Room("Sala1","Edificio A, Piso 2",50);
 	rTest2:Room := new Room("Sala2","Edificio B, Piso 3",5);
 	orgTest: seq of (Person) := [pTest1]; 
-	preTest:Presentation := new Presentation(orgTest,rTest1, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
-	runTest:RunwayShow := new RunwayShow(orgTest,rTest2, "PreTest",  mk_Utils`date(2017,12,15,18,00),  mk_Utils`date(2017,12,15,19,30), "testTheme");
 	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), 500);
 	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), 200);
+	preTest:Presentation := new Presentation(fasTest1,orgTest,rTest1, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
+	runTest:RunwayShow := new RunwayShow(fasTest1,orgTest,rTest2, "PreTest",  mk_Utils`date(2017,12,15,18,00),  mk_Utils`date(2017,12,15,19,30), "testTheme");
 	ticket1:Ticket := new Ticket(pTest, fasTest1, mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), <Worker>);
 	ticket2:Ticket := new Ticket(pTest, fasTest2, mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), <Worker>);
 	

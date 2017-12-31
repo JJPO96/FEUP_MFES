@@ -12,12 +12,12 @@ operations
 			UtilsTest`main();
 			PresentationTest`main();
 			PersonTest`main();
-			--NotificationTest`main();
-			--RunwayShowTest`main();
+			NotificationTest`main();
+			RunwayShowTest`main();
 			--PieceOfClothTest`main();
 			--FashionShowTest`main();
 			ClothDisplayedTest`main();
-			--TicketsTest`main();
+			TicketTest`main();
 		);
 functions
 -- TODO Define functiones here
