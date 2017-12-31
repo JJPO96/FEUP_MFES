@@ -52,6 +52,7 @@ operations
 	public addEvent : Event ==> ()
 		addEvent(e) == 
 			eventsAttending := eventsAttending ^ [e]
+			pre not Utils`existsInSeq[Event](e,eventsAttending)
 			post eventsAttending = eventsAttending~ ^ [e];
 			
 --set ticketToShow
@@ -64,7 +65,7 @@ operations
 	public addTicketShow : Ticket * FashionShow ==> ()
 		addTicketShow(t,s) == 
 			ticketToShow := ticketToShow munion {t |-> s}
-			pre not exists tt in set dom ticketToShow & (tt = t and ticketToShow(tt) = s)
+			pre not exists tt in set dom ticketToShow & (tt = t or ticketToShow(tt) = s)
 			post ticketToShow = ticketToShow~ munion {t |-> s};
 	
 end Person

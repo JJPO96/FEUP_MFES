@@ -49,6 +49,14 @@ operations
 			Utils`assertTrue(dat.day = 28);
 			Utils`assertTrue(dat.hour = 17);
 			Utils`assertTrue(dat.minute = 15);
+			
+			Utils`assertTrue(not Utils`isOldestDate(mk_Utils`date(2015,2,28,17,15),mk_Utils`date(2015,2,28,17,15)));
+			Utils`assertTrue(Utils`isOldestDate(mk_Utils`date(2014,2,28,17,15),mk_Utils`date(2015,2,28,17,15)));
+			Utils`assertTrue(Utils`isOldestDate(mk_Utils`date(2015,1,28,17,15),mk_Utils`date(2015,2,28,17,15)));
+			Utils`assertTrue(Utils`isOldestDate(mk_Utils`date(2015,2,27,17,15),mk_Utils`date(2015,2,28,17,15)));
+			Utils`assertTrue(Utils`isOldestDate(mk_Utils`date(2015,2,28,16,15),mk_Utils`date(2015,2,28,17,15)));
+			Utils`assertTrue(Utils`isOldestDate(mk_Utils`date(2015,2,28,17,14),mk_Utils`date(2015,2,28,17,15)));
+			
 		);
 		
 	public testExistInSeq : () ==> ()

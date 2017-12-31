@@ -6,7 +6,6 @@ instance variables
   public startDate : Utils`date;
   public endDate : Utils`date;
  
- 
   -- invariants
 	inv startDate <> endDate;
  

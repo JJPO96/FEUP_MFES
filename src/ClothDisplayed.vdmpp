@@ -7,6 +7,8 @@ instance variables
 	public model : Person;
 	public cloth : PieceOfCloth;
 	public runway : RunwayShow;
+	
+	inv model.clothSize = cloth.size;
 
 operations
 -- TODO Define operations here
