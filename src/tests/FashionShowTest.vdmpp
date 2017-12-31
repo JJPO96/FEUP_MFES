@@ -4,9 +4,40 @@ types
 values
 -- TODO Define values here
 instance variables
--- TODO Define instance variables here
+-- TODO Define instance variables hereperTest1:Person := new Person("Test Person1", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, false);
+	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), 500);
+	
+
 operations
--- TODO Define operations here
+	private testFashionShow : () ==> ()
+		testFashionShow() == (
+			--test contructor
+			Utils`assertTrue(fasTest1.name = "1234Show");
+			Utils`assertTrue(fasTest1.place = "MEO Arena");
+			Utils`assertTrue(fasTest1.startDate = mk_Utils`date(2017,12,15,8,00));
+			Utils`assertTrue(fasTest1.endDate = mk_Utils`date(2017,12,20,00,30));
+			Utils`assertTrue(fasTest1.capacity = 500);
+			
+			fasTest1.setName("5678Show");
+			Utils`assertTrue(fasTest1.name = "5678Show");
+			
+			fasTest1.setPlace("5678 Street");
+			Utils`assertTrue(fasTest1.place = "5678 Street");
+			
+			fasTest1.setStartDate(mk_Utils`date(2017,12,15,7,00));			
+			Utils`assertTrue(fasTest1.startDate = mk_Utils`date(2017,12,15,7,00));
+			
+			fasTest1.setEndDate(mk_Utils`date(2017,12,20,01,00));			
+			Utils`assertTrue(fasTest1.endDate = mk_Utils`date(2017,12,20,01,00));
+			
+			fasTest1.setCapacity(300);
+			Utils`assertTrue(fasTest1.capacity = 300);
+		);
+		
+	public static main: () ==> ()
+		main() == (
+			new FashionShowTest().testFashionShow();
+		);
 functions
 -- TODO Define functiones here
 traces

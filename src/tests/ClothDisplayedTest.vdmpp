@@ -18,8 +18,8 @@ instance variables
 	cDTest1:ClothDisplayed := new ClothDisplayed(pTest1,cTest1,runTest1);
 	
 operations
-	private testClothDisplayedTest : () ==> ()
-		testClothDisplayedTest() == (
+	private testClothDisplayed : () ==> ()
+		testClothDisplayed() == (
 			--test contructor
 			Utils`assertTrue(cDTest1.model = pTest1);
 			Utils`assertTrue(cDTest1.cloth = cTest1);
@@ -40,7 +40,7 @@ operations
 		
 	public static main: () ==> ()
 		main() == (
-			new ClothDisplayedTest().testClothDisplayedTest();
+			new ClothDisplayedTest().testClothDisplayed();
 		);
 functions
 -- TODO Define functiones here

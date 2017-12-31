@@ -7,7 +7,7 @@ instance variables
   public capacity : nat1;
 
 -- invariants
-inv startDate <> endDate;
+inv Utils`isOldestDate(startDate, endDate);
 
 operations
 -- constructor
@@ -40,5 +40,10 @@ operations
 	public setEndDate : Utils`date ==> ()
 		setEndDate(d) ==
 			endDate := d;
+			
+-- set capacity
+	public setCapacity : nat1 ==> ()
+		setCapacity(c) ==
+			capacity := c;
 
 end FashionShow

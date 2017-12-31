@@ -10,17 +10,6 @@ instance variables
 	inv Utils`isOldestDate(startDate, endDate);
  
  operations
- -- constructor
-	public Event : FashionShow * seq1 of Person * Room * Utils`string * Utils`date * Utils`date ==> Event
- 		Event(fS, sP, r, n, sD, eD) == (
- 			fashionShow := fS;
- 			organizers := sP;
- 			place := r;
- 			name := n;
- 			atomic(startDate := sD;
- 			endDate := eD;);
- 			return self;
- 		);
  
 -- set fashionShow		
  	public setFashionShow : FashionShow ==> ()

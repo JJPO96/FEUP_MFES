@@ -14,8 +14,8 @@ operations
 			PersonTest`main();
 			NotificationTest`main();
 			RunwayShowTest`main();
-			--PieceOfClothTest`main();
-			--FashionShowTest`main();
+			PieceOfClothTest`main();
+			FashionShowTest`main();
 			ClothDisplayedTest`main();
 			TicketTest`main();
 		);
