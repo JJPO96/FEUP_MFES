@@ -4,20 +4,21 @@ instance variables
   public place : Utils`string;
   public startDate : Utils`date;
   public endDate : Utils`date;
-  public capacity : nat1;
+  public events : seq of (Event);
 
 -- invariants
 inv Utils`isOldestDate(startDate, endDate);
+inv not exists e1, e2 in set elems events & (e1 <> e2 and e1.place = e2.place and Utils`coincDate(e1.startDate,e1.endDate, e2.startDate, e2.endDate));
 
 operations
 -- constructor
-	public FashionShow : Utils`string * Utils`string * Utils`date * Utils`date * nat1 ==> FashionShow
-		FashionShow(n, p, sD, eD, cap) == (
+	public FashionShow : Utils`string * Utils`string * Utils`date * Utils`date ==> FashionShow
+		FashionShow(n, p, sD, eD) == (
 			name := n;
 			place := p;
 			startDate := sD;
 			endDate := eD;
-			capacity := cap;
+			events := [];
 			return self;		
 		);
 		
@@ -41,9 +42,15 @@ operations
 		setEndDate(d) ==
 			endDate := d;
 			
--- set capacity
-	public setCapacity : nat1 ==> ()
-		setCapacity(c) ==
-			capacity := c;
+-- set events
+	public setEvents : seq of (Event) ==> ()
+		setEvents(e) ==
+			events := e;
+			
+-- add event
+	public addEvent : Event ==> ()
+		addEvent(e) ==
+			events := events ^ [e]
+			post events = events~ ^ [e];
 
 end FashionShow

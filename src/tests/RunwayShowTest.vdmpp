@@ -10,8 +10,8 @@ instance variables
 	orgTest1: seq of (Person) := [perTest1, perTest2, perTest3]; 
 	rTest1:Room := new Room("Sala1","Edificio A, Piso 2",50);
 	rTest2:Room := new Room("Sala2","Edificio B, Piso 3",5);
-	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), 500);
-	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), 200);
+	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
+	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
 	rTest:RunwayShow := new RunwayShow(fasTest1, [perTest1],rTest1, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testTheme");
 
 operations
@@ -24,10 +24,6 @@ operations
 			Utils`assertTrue(rTest.startDate = mk_Utils`date(2017,12,15,16,00));
 			Utils`assertTrue(rTest.endDate = mk_Utils`date(2017,12,15,17,30));
 			Utils`assertTrue(rTest.theme = "testTheme");
-		
-		--test setFashionShow()
-			rTest.setFashionShow(fasTest2);
-			Utils`assertTrue(rTest.fashionShow = fasTest2);
 		
 		--test setPlace()
 			rTest.setPlace(rTest2);

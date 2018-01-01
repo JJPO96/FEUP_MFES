@@ -1,6 +1,5 @@
 class Event
 instance variables
-	public fashionShow : FashionShow;
 	public organizers : seq1 of (Person);
   public place : Room;
   public name : Utils`string;
@@ -10,11 +9,6 @@ instance variables
 	inv Utils`isOldestDate(startDate, endDate);
  
  operations
- 
--- set fashionShow		
- 	public setFashionShow : FashionShow ==> ()
- 		setFashionShow(f) ==
- 			fashionShow := f;
  
 -- set organizers		
  	public setOrganizers : seq1 of (Person) ==> ()

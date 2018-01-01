@@ -7,8 +7,8 @@ instance variables
 	pTest1:Person := new Person("Test Person1", mk_Utils`date(1996,12,15,16,00), <Female>, <S>, false);
 	pTest2:Person := new Person("Test Person2", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, true);
 	pTest3:Person := new Person("Test Person3", mk_Utils`date(1994,10,15,16,00), <Female>, <S>, false);
-	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2014,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), 500);
-	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_Utils`date(2014,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), 200);
+	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2014,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
+	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_Utils`date(2014,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
 	tTest:Ticket := new Ticket(pTest1,fasTest1,mk_Utils`date(2016,10,15,16,00),mk_Utils`date(2016,10,15,16,30),<Guest>);
 operations
 -- TODO Define operations here

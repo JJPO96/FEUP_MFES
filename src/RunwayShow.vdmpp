@@ -6,13 +6,13 @@ operations
 -- constructor
 	public RunwayShow : FashionShow * seq1 of Person * Room * Utils`string * Utils`date * Utils`date * Utils`string ==> RunwayShow
 		RunwayShow(fS, sP, r, n, sD, eD, t) == (
- 			fashionShow := fS;
 			organizers := sP;
  			place := r;
  			name := n;
  			atomic(startDate := sD;
  			endDate := eD;);
 			theme := t;
+			fS.addEvent(self);
 			return self;		
 		);
 		

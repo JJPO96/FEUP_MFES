@@ -45,14 +45,15 @@ operations
 	
 --set is designer
 	public setIsDesigner : bool ==> ()
-		setIsDesigner(iD) ==		
+		setIsDesigner(iD) ==
 			isDesigner := iD;
 			
 --add event to eventsAttending
 	public addEvent : Event ==> ()
 		addEvent(e) == 
 			eventsAttending := eventsAttending ^ [e]
-			pre not Utils`existsInSeq[Event](e,eventsAttending)
+			pre not Utils`existsInSeq[Event](e,eventsAttending) and 
+			 		not exists te in set elems eventsAttending & Utils`coincDate(te.startDate,te.endDate,e.startDate,e.endDate)
 			post eventsAttending = eventsAttending~ ^ [e];
 			
 --set ticketToShow
