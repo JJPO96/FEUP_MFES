@@ -1,0 +1,24 @@
+class PrimpingSession is subclass of Event
+instance variables
+  public subject:Utils`string;
+  
+operations
+-- constructor
+	public PrimpingSession : FashionShow * seq1 of Person * Room * Utils`string * Utils`date * Utils`date * Utils`string ==> PrimpingSession
+	PrimpingSession(fS, sP, r, n, sD, eD, s) == (
+		organizers := sP;
+		place := r;
+		name := n;
+		atomic(startDate := sD;
+		endDate := eD;);
+		subject := s;
+		fS.addEvent(self);
+		return self;		
+	);
+
+-- set subject	
+	public setSubject : Utils`string ==> ()
+		setSubject(s) ==
+			subject := s;
+
+end PrimpingSession

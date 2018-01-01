@@ -8,16 +8,17 @@ instance variables
 operations
 		public static main: () ==> ()
 		 main() == (
-			RoomTest`main();
 			UtilsTest`main();
-			PresentationTest`main();
+			FashionShowTest`main();
+			TicketTest`main();
 			PersonTest`main();
-			NotificationTest`main();
+			PresentationTest`main();
+			PrimpingSessionTest`main();
 			RunwayShowTest`main();
 			PieceOfClothTest`main();
-			FashionShowTest`main();
 			ClothDisplayedTest`main();
-			TicketTest`main();
+			NotificationTest`main();
+			RoomTest`main();
 		);
 functions
 -- TODO Define functiones here
