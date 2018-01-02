@@ -2,7 +2,7 @@ class Utils
 
 /*
 
-	Class that contains some usefull code common to the other classes, this includes:
+	Class that contains some useful code common to the other classes, this includes:
 	Class-like types:
 	- string;
 	- date.
@@ -53,33 +53,38 @@ functions
 -- TODO Define functiones here
 
 -- function that checks if e exists in s
-	public static existsInSeq[@T](e:@T, s: seq of @T) res: bool ==
+	public static existsInSeq[@T] : @T * seq of @T -> bool 
+	existsInSeq(e,s)==
 		exists t in set elems s & t = e;
 
 -- function that returns the number of days in a month
-	public daysOfMonth(year:nat,month:nat1) res:nat1 ==
+	public daysOfMonth : nat * nat -> nat1
+	 daysOfMonth(year,month) ==
 		if month in set {1,3,5,7,8,10,12} then 31
 		elseif month in set {4,6,9,11} then 30
 		elseif isLeapYear(year) and month = 2 then 29
 		else 28;
 		
 -- function that says if a given year is a leap year or not
-	public static isLeapYear(year: nat1) res : bool ==
-		year mod 4 = 0 and year mod 100 <> 0 or 
-		year mod 400 = 0;
+	public static isLeapYear : nat1 -> bool 
+		isLeapYear(year)==
+			year mod 4 = 0 and year mod 100 <> 0 or 
+			year mod 400 = 0;
 		
 -- checks if d1 is older then d2
-	public static isOldestDate(d1:date, d2:date) res : bool ==
-		if d1.year <> d2.year then d1.year < d2.year
-		else if d1.month <> d2.month then d1.month < d2.month
-		else if d1.day <> d2.day then d1.day < d2.day
-		else if d1.hour <> d2.hour then d1.hour < d2.hour
-		else if d1.minute <> d2.minute then d1.minute < d2.minute
-		else false;
+	public static isOldestDate : date * date -> bool
+		isOldestDate(d1, d2) ==
+			if d1.year <> d2.year then d1.year < d2.year
+			else if d1.month <> d2.month then d1.month < d2.month
+			else if d1.day <> d2.day then d1.day < d2.day
+			else if d1.hour <> d2.hour then d1.hour < d2.hour
+			else if d1.minute <> d2.minute then d1.minute < d2.minute
+			else false;
 
 -- checks if pair (sd1, ed1) is coincident with (sd2, ed2) are coincident
-	public static coincDate(sd1:date, ed1:date, sd2:date, ed2:date) res : bool ==
-		if isOldestDate(ed1,sd2) or ed1 = sd2 or isOldestDate(ed2,sd1) or ed2 = sd1 then false
-		else true;
+	public static coincDate : date * date * date * date -> bool 
+		coincDate(sd1, ed1, sd2, ed2) ==
+			if isOldestDate(ed1,sd2) or ed1 = sd2 or isOldestDate(ed2,sd1) or ed2 = sd1 then false
+			else true;
 		
 end Utils
