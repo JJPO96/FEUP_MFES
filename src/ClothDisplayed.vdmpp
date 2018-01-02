@@ -7,7 +7,6 @@
 
 */
 
-
 instance variables
 	public model : Person;
 	public cloth : PieceOfCloth;
@@ -16,7 +15,6 @@ instance variables
 	inv model.clothSize = cloth.size;
 
 operations
--- TODO Define operations here
 -- constructor
 	public ClothDisplayed: Person * PieceOfCloth * RunwayShow ==> ClothDisplayed
 		ClothDisplayed(p, c, r) == (

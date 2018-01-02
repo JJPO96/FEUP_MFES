@@ -1,10 +1,13 @@
 class ClothDisplayedTest
-types
--- TODO Define types here
-values
--- TODO Define values here
+
+/*
+
+	Defines the test scenarios and test cases for the ClothDisplayed class.
+  J. Oliveira, FEUP, MFES, 2017/18.
+
+*/
+
 instance variables
--- TODO Define instance variables here
 	pTest1:Person := new Person("Test Person1", mk_Utils`date(1996,12,15,16,00), <Female>, <S>, false);
 	pTest2:Person := new Person("Test Person2", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, true);
 	pTest3:Person := new Person("Test Person3", mk_Utils`date(1994,10,15,16,00), <Female>, <S>, false);
@@ -42,8 +45,5 @@ operations
 		main() == (
 			new ClothDisplayedTest().testClothDisplayed();
 		);
-functions
--- TODO Define functiones here
-traces
--- TODO Define Combinatorial Test Traces here
+
 end ClothDisplayedTest

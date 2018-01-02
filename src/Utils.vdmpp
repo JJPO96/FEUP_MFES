@@ -43,14 +43,12 @@ types
 	public ticketType = <Designer> | <Worker> | <Volunteer> | <Guest> | <Sponsor> | <Attendee>;
 
 operations
--- TODO Define operations here
 
 	public static assertTrue: bool ==> ()
 		assertTrue(cond) == return
 		pre cond;
 		
 functions
--- TODO Define functiones here
 
 -- function that checks if e exists in s
 	public static existsInSeq[@T] : @T * seq of @T -> bool 

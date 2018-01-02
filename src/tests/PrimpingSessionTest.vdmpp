@@ -1,8 +1,12 @@
 class PrimpingSessionTest
-types
--- TODO Define types here
-values
--- TODO Define values here
+
+/*
+
+	Defines the test scenarios and test cases for the PrimpingSession class.
+  J. Oliveira, FEUP, MFES, 2017/18.
+
+*/
+
 instance variables
 	perTest1:Person := new Person("Test Person1", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, false);
 	perTest2:Person := new Person("Test Person2", mk_Utils`date(1991,12,15,16,00), <Female>, <S>, false);
@@ -13,6 +17,7 @@ instance variables
 	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
 	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
 	pTest:PrimpingSession := new PrimpingSession(fasTest1, [perTest1],rTest1, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
+	
 operations
 	private testPrimpingSession : () ==> ()
 		testPrimpingSession() == (
@@ -63,8 +68,5 @@ operations
 		main() == (
 			new PrimpingSessionTest().testPrimpingSession();
 		);
-functions
--- TODO Define functiones here
-traces
--- TODO Define Combinatorial Test Traces here
+
 end PrimpingSessionTest

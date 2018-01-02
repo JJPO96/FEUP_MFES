@@ -17,7 +17,6 @@ instance variables
   public eventsAttending : seq of (Event);
   public ticketToShow : map Ticket to FashionShow;
 
-
 operations
 -- constructor
 	public Person : Utils`string * Utils`date * Utils`gender * Utils`clothSize * bool ==> Person

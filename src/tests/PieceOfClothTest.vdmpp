@@ -1,16 +1,20 @@
 class PieceOfClothTest
-types
--- TODO Define types here
-values
--- TODO Define values here
+
+/*
+
+	Defines the test scenarios and test cases for the PieceOfCloth class.
+  J. Oliveira, FEUP, MFES, 2017/18.
+
+*/
+
 instance variables
 	pTest1:Person := new Person("Test Person1", mk_Utils`date(1996,12,15,16,00), <Female>, <S>, true);
 	pTest2:Person := new Person("Test Person2", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, true);
 	pTest3:Person := new Person("Test Person3", mk_Utils`date(1994,10,15,16,00), <Female>, <S>, false);
 	cTest1:PieceOfCloth := new PieceOfCloth(pTest1,<S>,<Shirt>); 
 	cTest2:PieceOfCloth := new PieceOfCloth(pTest2,<S>,<Pants>);
+
 operations
--- TODO Define operations here
 	private testPieceOfCloth : () ==> ()
 		testPieceOfCloth() == (
 			--test contructor
@@ -35,8 +39,5 @@ operations
 		main() == (
 			new PieceOfClothTest().testPieceOfCloth();
 		);
-functions
--- TODO Define functiones here
-traces
--- TODO Define Combinatorial Test Traces here
+		
 end PieceOfClothTest
