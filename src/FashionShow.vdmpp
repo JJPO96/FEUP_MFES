@@ -1,4 +1,13 @@
 class FashionShow
+
+/*
+
+	Defines a fashion show, it's the main class of the project.
+  J. Oliveira, FEUP, MFES, 2017/18.
+
+*/
+
+
 instance variables 
 	public name : Utils`string;
   public place : Utils`string;

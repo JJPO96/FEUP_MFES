@@ -1,5 +1,13 @@
  class ClothDisplayed
- 
+
+/*
+
+	Defines a cloth displayed by a model on a certain runway show.
+  J. Oliveira, FEUP, MFES, 2017/18.
+
+*/
+
+
 instance variables
 	public model : Person;
 	public cloth : PieceOfCloth;

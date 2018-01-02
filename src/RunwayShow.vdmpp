@@ -1,4 +1,13 @@
 class RunwayShow is subclass of Event
+
+/*
+
+	Defines a runway show, event of a fashion show.
+  J. Oliveira, FEUP, MFES, 2017/18.
+
+*/
+
+
 instance variables
   public theme:Utils`string;
 

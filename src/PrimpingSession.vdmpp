@@ -1,4 +1,13 @@
 class PrimpingSession is subclass of Event
+
+/*
+
+	Defines a primping session, event of a fashion show.
+  J. Oliveira, FEUP, MFES, 2017/18.
+
+*/
+
+
 instance variables
   public subject:Utils`string;
   

@@ -1,5 +1,12 @@
 class PieceOfCloth
-types
+
+/*
+
+	Defines a piece of cloth designed by a certain designer.
+  J. Oliveira, FEUP, MFES, 2017/18.
+
+*/
+
 instance variables
 	public creator:Person;
   public size:Utils`clothSize;

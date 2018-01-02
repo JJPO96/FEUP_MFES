@@ -1,4 +1,30 @@
 class Utils
+
+/*
+
+	Class that contains some usefull code common to the other classes, this includes:
+	Class-like types:
+	- string;
+	- date.
+	
+	Enumerations-like types:
+	- gender;
+	- clothSize;
+	- clothType;
+	- tickeType.
+	
+	Operations:
+	- assertTrue().
+	
+	Functions:
+	- existsInSeq();
+	- daysOfMonth();
+	- isLeapYear();
+	- isOldestDate();
+	- coincDate();
+
+*/
+
 types
 	public string = seq of char;
 	public date :: year : nat
@@ -7,9 +33,10 @@ types
 				 				 hour : nat
 				 				 minute : nat
 				 inv d == d.month <= 12 and
-								  d.day <= DaysOfMonth(d.year, d.month) and
+								  d.day <= daysOfMonth(d.year, d.month) and
 								  d.hour <= 23 and
 								  d.minute <= 59;
+								  
 	public gender = <Male> | <Female>;
 	public clothSize = <XL> | <L> | <M> | <S> | <XS>;
 	public clothType = <Shirt> | <Jacket> | <Pants> | <Shoes> | <Hat>;
@@ -30,14 +57,14 @@ functions
 		exists t in set elems s & t = e;
 
 -- function that returns the number of days in a month
-	public DaysOfMonth(year:nat,month:nat1) res:nat1 ==
+	public daysOfMonth(year:nat,month:nat1) res:nat1 ==
 		if month in set {1,3,5,7,8,10,12} then 31
 		elseif month in set {4,6,9,11} then 30
-		elseif IsLeapYear(year) and month = 2 then 29
+		elseif isLeapYear(year) and month = 2 then 29
 		else 28;
 		
 -- function that says if a given year is a leap year or not
-	public static IsLeapYear(year: nat1) res : bool ==
+	public static isLeapYear(year: nat1) res : bool ==
 		year mod 4 = 0 and year mod 100 <> 0 or 
 		year mod 400 = 0;
 		

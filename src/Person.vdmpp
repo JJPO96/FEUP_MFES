@@ -1,4 +1,13 @@
 class Person
+
+/*
+
+	Defines a person that will attend a fashion show.
+  J. Oliveira, FEUP, MFES, 2017/18.
+
+*/
+
+
 instance variables
   public name : Utils`string;
   public birthdate : Utils`date;

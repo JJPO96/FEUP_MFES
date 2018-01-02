@@ -1,4 +1,13 @@
 class Event
+
+/*
+
+	Defines a event of a fashion show, that will have 3 sub-types, Presentation, PrimpingSession and RunwayShow.
+  J. Oliveira, FEUP, MFES, 2017/18.
+
+*/
+
+
 instance variables
 	public organizers : seq1 of (Person);
   public place : Room;

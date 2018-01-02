@@ -1,4 +1,12 @@
 class Ticket
+
+/*
+
+	Defines a ticket for a fashion show.
+  J. Oliveira, FEUP, MFES, 2017/18.
+
+*/
+
 instance variables
 	public holder : Person;
 	public show : FashionShow;

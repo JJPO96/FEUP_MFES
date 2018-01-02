@@ -1,4 +1,13 @@
 class Room
+
+/*
+
+	Defines a room, that will host an event of a fashion show.
+  J. Oliveira, FEUP, MFES, 2017/18.
+
+*/
+
+
 instance variables
   public name : Utils`string;
   public localization : Utils`string;

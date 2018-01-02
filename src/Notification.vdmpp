@@ -1,4 +1,13 @@
 class Notification
+
+/*
+
+	Defines a notification that a person can create regarding a certain event.
+  J. Oliveira, FEUP, MFES, 2017/18.
+
+*/
+
+
 instance variables
 	public person:Person;
 	public event:Event;
