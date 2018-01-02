@@ -13,6 +13,7 @@ instance variables
 	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
 	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
 	pTest:Presentation := new Presentation(fasTest1, [perTest1],rTest1, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
+
 operations
 	private testPresentation : () ==> ()
 		testPresentation() == (

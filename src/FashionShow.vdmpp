@@ -5,6 +5,7 @@ instance variables
   public startDate : Utils`date;
   public endDate : Utils`date;
   public events : seq of (Event);
+  public peopleAttending : set of (Person);
 
 -- invariants
 inv Utils`isOldestDate(startDate, endDate);
@@ -19,6 +20,7 @@ operations
 			startDate := sD;
 			endDate := eD;
 			events := [];
+			peopleAttending := {};
 			return self;		
 		);
 		
@@ -52,5 +54,22 @@ operations
 		addEvent(e) ==
 			events := events ^ [e]
 			post events = events~ ^ [e];
+			
+-- add person to people attending event
+	public addPersonAttending : Person ==> ()
+		addPersonAttending(p) ==
+			peopleAttending := peopleAttending union {p}
+			pre p not in set peopleAttending
+			post peopleAttending = peopleAttending~ union {p};
+			
+-- get designers attending the event			
+	public getDesigners : () ==> set of (Person)
+		getDesigners() == (
+			dcl ret : set of Person := {};
+			for all p in set peopleAttending do(
+				if p.isDesigner then ret := ret union {p};
+			);
+			return ret;
+		);
 
 end FashionShow

@@ -66,7 +66,7 @@ operations
 	public addTicketShow : Ticket * FashionShow ==> ()
 		addTicketShow(t,s) == 
 			ticketToShow := ticketToShow munion {t |-> s}
-			pre not exists tt in set dom ticketToShow & (tt = t or ticketToShow(tt) = s) and tt.holder = self
+			pre not exists tt in set dom ticketToShow & tt.holder = self and (tt = t or ticketToShow(tt) = s)
 			post ticketToShow = ticketToShow~ munion {t |-> s};
 	
 end Person

@@ -1,8 +1,5 @@
  class ClothDisplayed
-types
--- TODO Define types here
-values
--- TODO Define values here
+ 
 instance variables
 	public model : Person;
 	public cloth : PieceOfCloth;
@@ -44,9 +41,5 @@ operations
 			runway := r;
 		)
 		pre cloth.creator in set elems r.organizers;
-		
-functions
--- TODO Define functiones here
-traces
--- TODO Define Combinatorial Test Traces here
+	
 end ClothDisplayed

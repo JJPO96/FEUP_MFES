@@ -5,6 +5,7 @@ instance variables
   public name : Utils`string;
   public startDate : Utils`date;
   public endDate : Utils`date;
+  
   -- invariants
 	inv Utils`isOldestDate(startDate, endDate);
  

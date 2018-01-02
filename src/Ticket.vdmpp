@@ -21,6 +21,7 @@ operations
  			startDate := sD;
  			endDate := eD;);
 			type := t;
+			s.addPersonAttending(p);
 			p.addTicketShow(self,s);
 			return self;	
 		);

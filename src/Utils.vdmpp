@@ -14,10 +14,7 @@ types
 	public clothSize = <XL> | <L> | <M> | <S> | <XS>;
 	public clothType = <Shirt> | <Jacket> | <Pants> | <Shoes> | <Hat>;
 	public ticketType = <Designer> | <Worker> | <Volunteer> | <Guest> | <Sponsor> | <Attendee>;
-values
--- TODO Define values here
-instance variables
--- TODO Define instance variables here
+
 operations
 -- TODO Define operations here
 
@@ -28,8 +25,9 @@ operations
 functions
 -- TODO Define functiones here
 
-public static existsInSeq[@T](e:@T, s: seq of @T) res: bool ==
-	exists t in set elems s & t = e;
+-- function that checks if e exists in s
+	public static existsInSeq[@T](e:@T, s: seq of @T) res: bool ==
+		exists t in set elems s & t = e;
 
 -- function that returns the number of days in a month
 	public DaysOfMonth(year:nat,month:nat1) res:nat1 ==
@@ -56,8 +54,5 @@ public static existsInSeq[@T](e:@T, s: seq of @T) res: bool ==
 	public static coincDate(sd1:date, ed1:date, sd2:date, ed2:date) res : bool ==
 		if isOldestDate(ed1,sd2) or ed1 = sd2 or isOldestDate(ed2,sd1) or ed2 = sd1 then false
 		else true;
-
-
-traces
--- TODO Define Combinatorial Test Traces here
+		
 end Utils
