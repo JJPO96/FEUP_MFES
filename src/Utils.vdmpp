@@ -1,4 +1,5 @@
-class FSUtils
+class Utils
+
 /*
 
 	Class that contains some useful code common to the other classes, this includes:
@@ -32,7 +33,7 @@ types
 				 				 hour : nat
 				 				 minute : nat
 				 inv d == d.month <= 12 and
-								 --  d.day <= daysOfMonth(d.year, d.month) and
+								  d.day <= daysOfMonth(d.year, d.month) and
 								  d.hour <= 23 and
 								  d.minute <= 59;
 								  
@@ -84,4 +85,4 @@ functions
 			if isOldestDate(ed1,sd2) or ed1 = sd2 or isOldestDate(ed2,sd1) or ed2 = sd1 then false
 			else true;
 		
-end FSUtils
+end Utils

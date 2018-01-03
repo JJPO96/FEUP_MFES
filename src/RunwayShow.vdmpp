@@ -9,11 +9,11 @@ class RunwayShow is subclass of Event
 
 
 instance variables
-  public theme:FSUtils`string;
+  public theme:Utils`string;
 
 operations
 -- constructor
-	public RunwayShow : FashionShow * seq1 of Person * Room * FSUtils`string * FSUtils`date * FSUtils`date * FSUtils`string ==> RunwayShow
+	public RunwayShow : FashionShow * seq1 of Person * Room * Utils`string * Utils`date * Utils`date * Utils`string ==> RunwayShow
 		RunwayShow(fS, sP, r, n, sD, eD, t) == (
 			show := fS;
 			organizers := sP;
@@ -25,10 +25,10 @@ operations
 			fS.addEvent(self);
 			return self;		
 		)
-		post FSUtils`existsInSeq[Event](self,fS.events);
+		post Utils`existsInSeq[Event](self,fS.events);
 		
 -- set name
- 	public setTheme : FSUtils`string ==> ()
+ 	public setTheme : Utils`string ==> ()
  		setTheme(t) ==
  			theme := t;
 		

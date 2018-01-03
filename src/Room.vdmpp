@@ -9,8 +9,8 @@ class Room
 
 
 instance variables
-  public name : FSUtils`string;
-  public localization : FSUtils`string;
+  public name : Utils`string;
+  public localization : Utils`string;
 	public capacity : nat1;
 	public occupants : seq of Person;
 	
@@ -19,7 +19,7 @@ instance variables
   
 operations
 -- constructor
-	public Room : FSUtils`string * FSUtils`string * nat1 ==> Room
+	public Room : Utils`string * Utils`string * nat1 ==> Room
 		Room(n, local, cap) == (
 			name := n;
 			localization	:= local;
@@ -29,12 +29,12 @@ operations
 		);
 		
 -- set name
- 	public setName : FSUtils`string ==> ()
+ 	public setName : Utils`string ==> ()
  		setName(n) ==
  			name := n;
  			
 -- set localization
- 	public setLocalization : FSUtils`string ==> ()
+ 	public setLocalization : Utils`string ==> ()
  		setLocalization(l) ==
  			localization := l;
  			

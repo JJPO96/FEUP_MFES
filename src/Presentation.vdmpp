@@ -9,11 +9,11 @@ class Presentation is subclass of Event
 
 
 instance variables
-  public subject:FSUtils`string;
+  public subject:Utils`string;
   
 operations
 -- constructor
-	public Presentation : FashionShow * seq1 of Person * Room * FSUtils`string * FSUtils`date * FSUtils`date * FSUtils`string ==> Presentation
+	public Presentation : FashionShow * seq1 of Person * Room * Utils`string * Utils`date * Utils`date * Utils`string ==> Presentation
 	Presentation(fS, sP, r, n, sD, eD, s) == (
 		show := fS;
 		organizers := sP;
@@ -25,10 +25,10 @@ operations
 		fS.addEvent(self);
 		return self;		
 	)
-	post FSUtils`existsInSeq[Event](self,fS.events);
+	post Utils`existsInSeq[Event](self,fS.events);
 
 -- set subject	
-	public setSubject : FSUtils`string ==> ()
+	public setSubject : Utils`string ==> ()
 		setSubject(s) ==
 			subject := s;
 

@@ -9,20 +9,20 @@ class FashionShow
 
 
 instance variables 
-	public name : FSUtils`string;
-  public place : FSUtils`string;
-  public startDate : FSUtils`date;
-  public endDate : FSUtils`date;
+	public name : Utils`string;
+  public place : Utils`string;
+  public startDate : Utils`date;
+  public endDate : Utils`date;
   public events : seq of (Event);
   public peopleAttending : set of (Person);
 
 -- invariants
-inv FSUtils`isOldestDate(startDate, endDate);
-inv not exists e1, e2 in set elems events & (e1 <> e2 and e1.place = e2.place and FSUtils`coincDate(e1.startDate,e1.endDate, e2.startDate, e2.endDate));
+inv Utils`isOldestDate(startDate, endDate);
+inv not exists e1, e2 in set elems events & (e1 <> e2 and e1.place = e2.place and Utils`coincDate(e1.startDate,e1.endDate, e2.startDate, e2.endDate));
 
 operations
 -- constructor
-	public FashionShow : FSUtils`string * FSUtils`string * FSUtils`date * FSUtils`date ==> FashionShow
+	public FashionShow : Utils`string * Utils`string * Utils`date * Utils`date ==> FashionShow
 		FashionShow(n, p, sD, eD) == (
 			name := n;
 			place := p;
@@ -35,22 +35,22 @@ operations
 		post events = [] and peopleAttending = {};
 		
 -- set name
- 	public setName : FSUtils`string ==> ()
+ 	public setName : Utils`string ==> ()
  		setName(n) ==
  			name := n;
  			
 -- set place
- 	public setPlace : FSUtils`string ==> ()
+ 	public setPlace : Utils`string ==> ()
  		setPlace(p) ==
  			place := p;
 			
 -- set start date
-	public setStartDate : FSUtils`date ==> ()
+	public setStartDate : Utils`date ==> ()
 		setStartDate(d) ==
 			startDate := d;
 			
 -- set end date
-	public setEndDate : FSUtils`date ==> ()
+	public setEndDate : Utils`date ==> ()
 		setEndDate(d) ==
 			endDate := d;
 			

@@ -8,53 +8,53 @@ class FashionShowTest
 */
 
 instance variables
-	perTest1:Person := new Person("Test Person1", mk_FSUtils`date(1996,12,15,16,00), <Male>, <L>, false);
-	perTest2:Person := new Person("Test Person2", mk_FSUtils`date(1995,12,15,16,00), <Male>, <L>, true);
-	perTest3:Person := new Person("Test Person3", mk_FSUtils`date(1994,12,15,16,00), <Male>, <L>, true);
-	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_FSUtils`date(2017,12,15,8,00),  mk_FSUtils`date(2017,12,20,00,30));
+	perTest1:Person := new Person("Test Person1", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, false);
+	perTest2:Person := new Person("Test Person2", mk_Utils`date(1995,12,15,16,00), <Male>, <L>, true);
+	perTest3:Person := new Person("Test Person3", mk_Utils`date(1994,12,15,16,00), <Male>, <L>, true);
+	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
 	rTest1:Room := new Room("Sala1","Edificio A, Piso 2",50);
 	rTest2:Room := new Room("Sala2","Edificio B, Piso 3",5);
 	orgTest: seq of (Person) := [perTest1]; 
-	preTest1:Presentation := new Presentation(fasTest1,orgTest,rTest1, "NameTest",  mk_FSUtils`date(2017,12,15,16,00),  mk_FSUtils`date(2017,12,15,17,30), "testSubject");
-	preTest2:Presentation := new Presentation(fasTest1,orgTest,rTest2, "NameTest2",  mk_FSUtils`date(2017,12,15,16,00),  mk_FSUtils`date(2017,12,15,17,30), "testSubject");
-	runTest1:RunwayShow := new RunwayShow(fasTest1,orgTest,rTest1, "PreTest",  mk_FSUtils`date(2017,12,15,18,00),  mk_FSUtils`date(2017,12,15,19,30), "testTheme");
-	tTest1:Ticket := new Ticket(perTest1, fasTest1, mk_FSUtils`date(2017,12,15,8,00),  mk_FSUtils`date(2017,12,20,00,30), <Worker>);
-	tTest2:Ticket := new Ticket(perTest2, fasTest1, mk_FSUtils`date(2017,12,15,8,00),  mk_FSUtils`date(2017,12,20,00,30), <Designer>);
-	tTest3:Ticket := new Ticket(perTest3, fasTest1, mk_FSUtils`date(2017,12,15,8,00),  mk_FSUtils`date(2017,12,20,00,30), <Attendee>);
+	preTest1:Presentation := new Presentation(fasTest1,orgTest,rTest1, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
+	preTest2:Presentation := new Presentation(fasTest1,orgTest,rTest2, "NameTest2",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
+	runTest1:RunwayShow := new RunwayShow(fasTest1,orgTest,rTest1, "PreTest",  mk_Utils`date(2017,12,15,18,00),  mk_Utils`date(2017,12,15,19,30), "testTheme");
+	tTest1:Ticket := new Ticket(perTest1, fasTest1, mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), <Worker>);
+	tTest2:Ticket := new Ticket(perTest2, fasTest1, mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), <Designer>);
+	tTest3:Ticket := new Ticket(perTest3, fasTest1, mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), <Attendee>);
 	
 
 operations
 	private testFashionShow : () ==> ()
 		testFashionShow() == (
 			--test contructor
-			FSUtils`assertTrue(fasTest1.name = "1234Show");
-			FSUtils`assertTrue(fasTest1.place = "MEO Arena");
-			FSUtils`assertTrue(fasTest1.startDate = mk_FSUtils`date(2017,12,15,8,00));
-			FSUtils`assertTrue(fasTest1.endDate = mk_FSUtils`date(2017,12,20,00,30));
-			FSUtils`assertTrue(fasTest1.events = [preTest1,preTest2,runTest1]);
+			Utils`assertTrue(fasTest1.name = "1234Show");
+			Utils`assertTrue(fasTest1.place = "MEO Arena");
+			Utils`assertTrue(fasTest1.startDate = mk_Utils`date(2017,12,15,8,00));
+			Utils`assertTrue(fasTest1.endDate = mk_Utils`date(2017,12,20,00,30));
+			Utils`assertTrue(fasTest1.events = [preTest1,preTest2,runTest1]);
 			
 			--test setName()
 			fasTest1.setName("5678Show");
-			FSUtils`assertTrue(fasTest1.name = "5678Show");
+			Utils`assertTrue(fasTest1.name = "5678Show");
 			
 			--test setPlace()
 			fasTest1.setPlace("5678 Street");
-			FSUtils`assertTrue(fasTest1.place = "5678 Street");
+			Utils`assertTrue(fasTest1.place = "5678 Street");
 			
 			--test setStartDate()
-			fasTest1.setStartDate(mk_FSUtils`date(2017,12,15,7,00));			
-			FSUtils`assertTrue(fasTest1.startDate = mk_FSUtils`date(2017,12,15,7,00));
+			fasTest1.setStartDate(mk_Utils`date(2017,12,15,7,00));			
+			Utils`assertTrue(fasTest1.startDate = mk_Utils`date(2017,12,15,7,00));
 			
 			--test setEndDate()
-			fasTest1.setEndDate(mk_FSUtils`date(2017,12,20,01,00));			
-			FSUtils`assertTrue(fasTest1.endDate = mk_FSUtils`date(2017,12,20,01,00));
+			fasTest1.setEndDate(mk_Utils`date(2017,12,20,01,00));			
+			Utils`assertTrue(fasTest1.endDate = mk_Utils`date(2017,12,20,01,00));
 			
 			--test setEvents()
 			fasTest1.setEvents([preTest1,runTest1]);			
-			FSUtils`assertTrue(fasTest1.events = [preTest1,runTest1]);	
+			Utils`assertTrue(fasTest1.events = [preTest1,runTest1]);	
 			
 			--test getDesigners()
-			FSUtils`assertTrue(fasTest1.getDesigners() = {perTest2,perTest3});	
+			Utils`assertTrue(fasTest1.getDesigners() = {perTest2,perTest3});	
 				
 		);
 		

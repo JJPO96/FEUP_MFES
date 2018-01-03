@@ -20,7 +20,7 @@ operations
 			ClothDisplayedTest`main();
 			NotificationTest`main();
 			RoomTest`main();
-			FSUtilsTest`main();
+			UtilsTest`main();
 			TestScenario`main();
 		);
 

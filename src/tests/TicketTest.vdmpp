@@ -8,43 +8,43 @@ class TicketTest
 */
 
 instance variables
-	pTest1:Person := new Person("Test Person1", mk_FSUtils`date(1996,12,15,16,00), <Female>, <S>, false);
-	pTest2:Person := new Person("Test Person2", mk_FSUtils`date(1996,12,15,16,00), <Male>, <L>, true);
-	pTest3:Person := new Person("Test Person3", mk_FSUtils`date(1994,10,15,16,00), <Female>, <S>, false);
-	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_FSUtils`date(2014,12,15,8,00),  mk_FSUtils`date(2017,12,20,00,30));
-	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_FSUtils`date(2014,12,15,8,00),  mk_FSUtils`date(2017,12,20,00,30));
-	tTest:Ticket := new Ticket(pTest1,fasTest1,mk_FSUtils`date(2016,10,15,16,00),mk_FSUtils`date(2016,10,15,16,30),<Guest>);
+	pTest1:Person := new Person("Test Person1", mk_Utils`date(1996,12,15,16,00), <Female>, <S>, false);
+	pTest2:Person := new Person("Test Person2", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, true);
+	pTest3:Person := new Person("Test Person3", mk_Utils`date(1994,10,15,16,00), <Female>, <S>, false);
+	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2014,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
+	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_Utils`date(2014,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
+	tTest:Ticket := new Ticket(pTest1,fasTest1,mk_Utils`date(2016,10,15,16,00),mk_Utils`date(2016,10,15,16,30),<Guest>);
 
 operations
 
 	private testTicket : () ==> ()
 		testTicket() == (
 			--test contructor
-				FSUtils`assertTrue(tTest.holder = pTest1);
-				FSUtils`assertTrue(tTest.show = fasTest1);
-				FSUtils`assertTrue(tTest.startDate = mk_FSUtils`date(2016,10,15,16,00));
-				FSUtils`assertTrue(tTest.endDate = mk_FSUtils`date(2016,10,15,16,30));
-				FSUtils`assertTrue(tTest.type = <Guest>);
+				Utils`assertTrue(tTest.holder = pTest1);
+				Utils`assertTrue(tTest.show = fasTest1);
+				Utils`assertTrue(tTest.startDate = mk_Utils`date(2016,10,15,16,00));
+				Utils`assertTrue(tTest.endDate = mk_Utils`date(2016,10,15,16,30));
+				Utils`assertTrue(tTest.type = <Guest>);
 			
 			--test setHolder()
 				tTest.setHolder(pTest2);
-				FSUtils`assertTrue(tTest.holder = pTest2);
+				Utils`assertTrue(tTest.holder = pTest2);
 			
 			--test setFashionShow()
 				tTest.setShow(fasTest2);
-				FSUtils`assertTrue(tTest.show = fasTest2);
+				Utils`assertTrue(tTest.show = fasTest2);
 			
 			--test setStartDate()
-				tTest.setStartDate(mk_FSUtils`date(2016,10,14,16,00));
-				FSUtils`assertTrue(tTest.startDate = mk_FSUtils`date(2016,10,14,16,00));
+				tTest.setStartDate(mk_Utils`date(2016,10,14,16,00));
+				Utils`assertTrue(tTest.startDate = mk_Utils`date(2016,10,14,16,00));
 			
 			--test setEndDate()
-				tTest.setEndDate(mk_FSUtils`date(2016,10,14,16,30));
-				FSUtils`assertTrue(tTest.endDate = mk_FSUtils`date(2016,10,14,16,30));
+				tTest.setEndDate(mk_Utils`date(2016,10,14,16,30));
+				Utils`assertTrue(tTest.endDate = mk_Utils`date(2016,10,14,16,30));
 			
 			--test setTicketType()
 				tTest.setType(<Designer>);
-				FSUtils`assertTrue(tTest.type = <Designer>);
+				Utils`assertTrue(tTest.type = <Designer>);
 		);
 		
 	public static main: () ==> ()

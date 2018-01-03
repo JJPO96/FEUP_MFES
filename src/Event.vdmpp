@@ -12,12 +12,12 @@ instance variables
 	public show : FashionShow;
 	public organizers : seq1 of (Person);
   public place : Room;
-  public name : FSUtils`string;
-  public startDate : FSUtils`date;
-  public endDate : FSUtils`date;
+  public name : Utils`string;
+  public startDate : Utils`date;
+  public endDate : Utils`date;
   
   -- invariants
-	inv FSUtils`isOldestDate(startDate, endDate);
+	inv Utils`isOldestDate(startDate, endDate);
  
 operations
  
@@ -37,17 +37,17 @@ operations
  			place := r;
  			
 -- set name
- 	public setName : FSUtils`string ==> ()
+ 	public setName : Utils`string ==> ()
  		setName(n) ==
  			name := n;
 			
 -- set start date
-	public setStartDate : FSUtils`date ==> ()
+	public setStartDate : Utils`date ==> ()
 		setStartDate(d) ==
 			startDate := d;
 			
 -- set end date
-	public setEndDate : FSUtils`date ==> ()
+	public setEndDate : Utils`date ==> ()
 		setEndDate(d) ==
 			endDate := d;
 			
