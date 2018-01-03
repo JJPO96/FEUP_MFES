@@ -31,7 +31,8 @@ operations
 			events := [];
 			peopleAttending := {};
 			return self;		
-		);
+		)
+		post events = [] and peopleAttending = {};
 		
 -- set name
  	public setName : Utils`string ==> ()

@@ -9,6 +9,7 @@ class Event
 
 
 instance variables
+	public show : FashionShow;
 	public organizers : seq1 of (Person);
   public place : Room;
   public name : Utils`string;

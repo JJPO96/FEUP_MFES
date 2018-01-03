@@ -10,7 +10,6 @@ class Tests
 operations
 		public static main: () ==> ()
 		 main() == (
-			UtilsTest`main();
 			FashionShowTest`main();
 			TicketTest`main();
 			PersonTest`main();
@@ -21,6 +20,7 @@ operations
 			ClothDisplayedTest`main();
 			NotificationTest`main();
 			RoomTest`main();
+			UtilsTest`main();
 		);
 
 end Tests

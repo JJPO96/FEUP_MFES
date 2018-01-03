@@ -58,11 +58,15 @@ operations
 			
 --add event to eventsAttending
 	public addEvent : Event ==> ()
-		addEvent(e) == 
-			eventsAttending := eventsAttending ^ [e]
+		addEvent(e) == (
+			eventsAttending := eventsAttending ^ [e];
+			e.place.addOccupant(self);
+			)
 			pre not Utils`existsInSeq[Event](e,eventsAttending) and 
-			 		not exists te in set elems eventsAttending & Utils`coincDate(te.startDate,te.endDate,e.startDate,e.endDate)
-			post eventsAttending = eventsAttending~ ^ [e];
+			 		not exists te in set elems eventsAttending & Utils`coincDate(te.startDate,te.endDate,e.startDate,e.endDate) and
+			 		e.show in set rng ticketToShow and
+			 		exists t in set dom ticketToShow & (Utils`isOldestDate(ticketToShow(t).startDate, e.startDate) and Utils`isOldestDate(e.endDate,ticketToShow(t).startDate))
+			post eventsAttending = eventsAttending~ ^ [e] and self in set elems e.place.occupants;
 			
 --set ticketToShow
 	public setTicketToShow : map Ticket to FashionShow ==> ()

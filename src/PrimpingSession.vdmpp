@@ -15,6 +15,7 @@ operations
 -- constructor
 	public PrimpingSession : FashionShow * seq1 of Person * Room * Utils`string * Utils`date * Utils`date * Utils`string ==> PrimpingSession
 	PrimpingSession(fS, sP, r, n, sD, eD, s) == (
+		show := fS;
 		organizers := sP;
 		place := r;
 		name := n;
@@ -23,7 +24,8 @@ operations
 		subject := s;
 		fS.addEvent(self);
 		return self;		
-	);
+	)
+		post Utils`existsInSeq[Event](self,fS.events);
 
 -- set subject	
 	public setSubject : Utils`string ==> ()
