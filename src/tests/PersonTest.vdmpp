@@ -16,7 +16,7 @@ instance variables
 	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
 	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
 	preTest:Presentation := new Presentation(fasTest1,orgTest,rTest1, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
-	runTest:RunwayShow := new RunwayShow(fasTest1,orgTest,rTest2, "PreTest",  mk_Utils`date(2017,12,15,18,00),  mk_Utils`date(2017,12,15,19,30), "testTheme");
+	runTest:RunwayShow := new RunwayShow(fasTest1,orgTest,rTest2, "PreTest",  mk_Utils`date(2017,12,15,12,00),  mk_Utils`date(2017,12,15,15,30), "testTheme");
 	ticket1:Ticket := new Ticket(pTest, fasTest1, mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), <Worker>);
 	ticket2:Ticket := new Ticket(pTest, fasTest2, mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30), <Worker>);
 	
@@ -46,25 +46,20 @@ operations
 			pTest.setClothSize(<XS>);
 			Utils`assertTrue(pTest.clothSize = <XS>);
 			
+		--test setIsDesigner
+			pTest.setIsDesigner(true);
+			Utils`assertTrue(pTest.isDesigner = true);
+			
+			
 		--test addEvent()
 			pTest.addEvent(preTest);
 			pTest.addEvent(runTest);
 			Utils`assertTrue(pTest.eventsAttending = [preTest, runTest]);
 			Utils`assertTrue(len pTest.eventsAttending = 2);
 			
-		--test setIsDesigner
-			pTest.setIsDesigner(true);
-			Utils`assertTrue(pTest.isDesigner = true);
-		
 		--test setTicketToShow
-			pTest.setTicketToShow({ticket1 |-> fasTest1});
-			Utils`assertTrue(pTest.ticketToShow = {ticket1 |-> fasTest1});
-			
-		--test addTicketShow()
-			pTest.addTicketShow(ticket2, fasTest2);
-			Utils`assertTrue(pTest.ticketToShow = {ticket1 |-> fasTest1, ticket2 |-> fasTest2});
-			
-			--pTest.addTicketShow(ticket1, fasTest1);
+			pTest.setTicketToShow({ticket2 |-> fasTest2});
+			Utils`assertTrue(pTest.ticketToShow = {ticket2 |-> fasTest2});
 		);
 		
 	public static main: () ==> ()
