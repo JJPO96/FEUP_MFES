@@ -21,6 +21,7 @@ operations
 			NotificationTest`main();
 			RoomTest`main();
 			UtilsTest`main();
+			TestScenario`main();
 		);
 
 end Tests
