@@ -9,17 +9,17 @@ class Person
 
 
 instance variables
-  public name : Utils`string;
-  public birthdate : Utils`date;
-  public gender : Utils`gender;
-  public clothSize : Utils`clothSize;
+  public name : FSUtils`string;
+  public birthdate : FSUtils`date;
+  public gender : FSUtils`gender;
+  public clothSize : FSUtils`clothSize;
   public isDesigner : bool;
   public eventsAttending : seq of (Event);
   public ticketToShow : map Ticket to FashionShow;
 
 operations
 -- constructor
-	public Person : Utils`string * Utils`date * Utils`gender * Utils`clothSize * bool ==> Person
+	public Person : FSUtils`string * FSUtils`date * FSUtils`gender * FSUtils`clothSize * bool ==> Person
 		Person(n, bD, g, cS, iD) == (
 			name := n;
 			birthdate := bD;
@@ -32,22 +32,22 @@ operations
 		);
 		
 --set name		
-	public setName : Utils`string ==> ()
+	public setName : FSUtils`string ==> ()
 		setName(n) ==
 			name := n;
 			
 --set birthdate
-	public setBirthdate : Utils`date ==> ()
+	public setBirthdate : FSUtils`date ==> ()
 		setBirthdate(bD) ==
 			birthdate := bD;
 			
 --set gender
-	public setGender : Utils`gender ==> ()
+	public setGender : FSUtils`gender ==> ()
 		setGender(g) ==
 			gender := g;
 			
 -- set cloth size
-	public setClothSize : Utils`clothSize ==> ()
+	public setClothSize : FSUtils`clothSize ==> ()
 		setClothSize(cS)	==
 			clothSize := cS;
 	
@@ -62,10 +62,10 @@ operations
 			eventsAttending := eventsAttending ^ [e];
 			e.place.addOccupant(self);
 			)
-			pre not Utils`existsInSeq[Event](e,eventsAttending) and 
+			pre not FSUtils`existsInSeq[Event](e,eventsAttending) and 
 			 		e.show in set rng ticketToShow and
-			 		exists t in set dom ticketToShow & (Utils`isOldestDate(ticketToShow(t).startDate, e.startDate) and Utils`isOldestDate(e.endDate,ticketToShow(t).endDate)) and
-			 		not exists te in set elems eventsAttending & Utils`coincDate(te.startDate,te.endDate,e.startDate,e.endDate)
+			 		exists t in set dom ticketToShow & (FSUtils`isOldestDate(ticketToShow(t).startDate, e.startDate) and FSUtils`isOldestDate(e.endDate,ticketToShow(t).endDate)) and
+			 		not exists te in set elems eventsAttending & FSUtils`coincDate(te.startDate,te.endDate,e.startDate,e.endDate)
 			post eventsAttending = eventsAttending~ ^ [e] and self in set elems e.place.occupants;
 			
 --set ticketToShow

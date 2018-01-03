@@ -8,25 +8,25 @@ class RoomTest
 */
 
 instance variables
-	pTest : Person := new Person("TestPerson", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, false);
+	pTest : Person := new Person("TestPerson", mk_FSUtils`date(1996,12,15,16,00), <Male>, <L>, false);
 	rTest:Room := new Room("Sala1","Edificio A, Piso 2",50);
 operations
 	private testRoom : () ==> ()
 		testRoom() == (
-			Utils`assertTrue(rTest.name = "Sala1");
-		  Utils`assertTrue(rTest.localization = "Edificio A, Piso 2");
-			Utils`assertTrue(rTest.capacity = 50);
+			FSUtils`assertTrue(rTest.name = "Sala1");
+		  FSUtils`assertTrue(rTest.localization = "Edificio A, Piso 2");
+			FSUtils`assertTrue(rTest.capacity = 50);
 			rTest.setName("Sala11");
-			Utils`assertTrue(rTest.name = "Sala11");
+			FSUtils`assertTrue(rTest.name = "Sala11");
 			rTest.setLocalization("Edificio B, Piso 1");
-			Utils`assertTrue(rTest.localization = "Edificio B, Piso 1");
+			FSUtils`assertTrue(rTest.localization = "Edificio B, Piso 1");
 			rTest.setCapacity(5);
-			Utils`assertTrue(rTest.capacity = 5);
+			FSUtils`assertTrue(rTest.capacity = 5);
 			rTest.addOccupant(pTest);
-			Utils`assertTrue(len rTest.occupants = 1);
-			Utils`assertTrue(rTest.occupants =  [pTest]);
+			FSUtils`assertTrue(len rTest.occupants = 1);
+			FSUtils`assertTrue(rTest.occupants =  [pTest]);
 			rTest.emptyTheRoom();
-			Utils`assertTrue(rTest.occupants =  []);
+			FSUtils`assertTrue(rTest.occupants =  []);
 		);
 		
 	public static main: () ==> ()

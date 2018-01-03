@@ -9,11 +9,11 @@ class PrimpingSession is subclass of Event
 
 
 instance variables
-  public subject:Utils`string;
+  public subject:FSUtils`string;
   
 operations
 -- constructor
-	public PrimpingSession : FashionShow * seq1 of Person * Room * Utils`string * Utils`date * Utils`date * Utils`string ==> PrimpingSession
+	public PrimpingSession : FashionShow * seq1 of Person * Room * FSUtils`string * FSUtils`date * FSUtils`date * FSUtils`string ==> PrimpingSession
 	PrimpingSession(fS, sP, r, n, sD, eD, s) == (
 		show := fS;
 		organizers := sP;
@@ -25,10 +25,10 @@ operations
 		fS.addEvent(self);
 		return self;		
 	)
-		post Utils`existsInSeq[Event](self,fS.events);
+		post FSUtils`existsInSeq[Event](self,fS.events);
 
 -- set subject	
-	public setSubject : Utils`string ==> ()
+	public setSubject : FSUtils`string ==> ()
 		setSubject(s) ==
 			subject := s;
 
