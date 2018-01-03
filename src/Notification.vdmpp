@@ -11,7 +11,7 @@ class Notification
 instance variables
 	public person:Person;
 	public event:Event;
-  public startTime:Utils`date;
+  public startTime:FSUtils`date;
   public minToNotify:nat;
 
 	inv event.startDate = startTime;

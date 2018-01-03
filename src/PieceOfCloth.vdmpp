@@ -9,15 +9,15 @@ class PieceOfCloth
 
 instance variables
 	public creator:Person;
-  public size:Utils`clothSize;
-  public clothType:Utils`clothType;
+  public size:FSUtils`clothSize;
+  public clothType:FSUtils`clothType;
 
 --invariants
 	inv creator.isDesigner;
 
 operations
 -- constructor
-	public PieceOfCloth : Person * Utils`clothSize * Utils`clothType ==> PieceOfCloth
+	public PieceOfCloth : Person * FSUtils`clothSize * FSUtils`clothType ==> PieceOfCloth
 		PieceOfCloth(p,s,t) == (
 			creator := p;
 			size := s;
@@ -31,12 +31,12 @@ operations
 			creator := p;
 
 -- set size		
-	public setSize : Utils`clothSize ==> ()
+	public setSize : FSUtils`clothSize ==> ()
 		setSize(s) ==
 			size := s;
 			
 -- set clothType
-	public setClothType : Utils`clothType ==> ()
+	public setClothType : FSUtils`clothType ==> ()
 		setClothType(t) == 
 			clothType := t;
 			

@@ -38,67 +38,67 @@ operations
 		test() == (
 	
 		--test scenario 1 -> creating fashion show 1234Show
-			fasTest1 := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
+			fasTest1 := new FashionShow("1234Show", "MEO Arena", mk_FSUtils`date(2017,12,15,8,00),  mk_FSUtils`date(2017,12,20,00,30));
 			
-			Utils`assertTrue(fasTest1.name = "1234Show");
-			Utils`assertTrue(fasTest1.place = "MEO Arena");
-			Utils`assertTrue(fasTest1.startDate = mk_Utils`date(2017,12,15,8,00));
-			Utils`assertTrue(fasTest1.endDate = mk_Utils`date(2017,12,20,00,30));
+			FSUtils`assertTrue(fasTest1.name = "1234Show");
+			FSUtils`assertTrue(fasTest1.place = "MEO Arena");
+			FSUtils`assertTrue(fasTest1.startDate = mk_FSUtils`date(2017,12,15,8,00));
+			FSUtils`assertTrue(fasTest1.endDate = mk_FSUtils`date(2017,12,20,00,30));
 			
 			
-		--fasTest1 := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,20,8,00),  mk_Utils`date(2017,12,15,00,30));
+		--fasTest1 := new FashionShow("1234Show", "MEO Arena", mk_FSUtils`date(2017,12,20,8,00),  mk_FSUtils`date(2017,12,15,00,30));
 			/*Would fail because end date is previous to start date*/
 		
 			
 		--test scenario 2 -> creating one event of each type 
-			pTest1 := new Person("Test Person1", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, false);
-			pTest2 := new Person("Test Person2", mk_Utils`date(1995,10,15,16,00), <Female>, <S>, false);
-			pTest3 := new Person("Test Person3", mk_Utils`date(1995,7,15,16,00), <Female>, <M>, true);
-			pTest4 := new Person("Test Person4", mk_Utils`date(1994,10,5,16,00), <Male>, <XL>, true);
+			pTest1 := new Person("Test Person1", mk_FSUtils`date(1996,12,15,16,00), <Male>, <L>, false);
+			pTest2 := new Person("Test Person2", mk_FSUtils`date(1995,10,15,16,00), <Female>, <S>, false);
+			pTest3 := new Person("Test Person3", mk_FSUtils`date(1995,7,15,16,00), <Female>, <M>, true);
+			pTest4 := new Person("Test Person4", mk_FSUtils`date(1994,10,5,16,00), <Male>, <XL>, true);
 			
 			roomTest1 := new Room("Sala1","Edificio A, Piso 1",50);
 			roomTest2 := new Room("Sala2","Edificio A, Piso 2",50);
 			roomTest3 := new Room("Sala3","Edificio A, Piso 2",3);
 			
-			presTest1 := new Presentation(fasTest1, [pTest1], roomTest1, "TestPresentation1",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
-			primpTest1 := new PrimpingSession(fasTest1, [pTest1], roomTest2, "TestPrimping1",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
-			runTest1 := new RunwayShow(fasTest1, [pTest3, pTest4], roomTest1, "TestRunway1",  mk_Utils`date(2017,12,15,17,30),  mk_Utils`date(2017,12,15,18,30), "testTheme");
-			runTest2 := new RunwayShow(fasTest1, [pTest3], roomTest3, "TestRunway1",  mk_Utils`date(2017,12,15,17,30),  mk_Utils`date(2017,12,15,18,30), "testTheme");
-			runTest3 := new RunwayShow(fasTest1, [pTest3], roomTest3, "TestRunway1",  mk_Utils`date(2017,12,15,18,30),  mk_Utils`date(2017,12,15,19,30), "testTheme");
+			presTest1 := new Presentation(fasTest1, [pTest1], roomTest1, "TestPresentation1",  mk_FSUtils`date(2017,12,15,16,00),  mk_FSUtils`date(2017,12,15,17,30), "testSubject");
+			primpTest1 := new PrimpingSession(fasTest1, [pTest1], roomTest2, "TestPrimping1",  mk_FSUtils`date(2017,12,15,16,00),  mk_FSUtils`date(2017,12,15,17,30), "testSubject");
+			runTest1 := new RunwayShow(fasTest1, [pTest3, pTest4], roomTest1, "TestRunway1",  mk_FSUtils`date(2017,12,15,17,30),  mk_FSUtils`date(2017,12,15,18,30), "testTheme");
+			runTest2 := new RunwayShow(fasTest1, [pTest3], roomTest3, "TestRunway1",  mk_FSUtils`date(2017,12,15,17,30),  mk_FSUtils`date(2017,12,15,18,30), "testTheme");
+			runTest3 := new RunwayShow(fasTest1, [pTest3], roomTest3, "TestRunway1",  mk_FSUtils`date(2017,12,15,18,30),  mk_FSUtils`date(2017,12,15,19,30), "testTheme");
 			
-			--runTest1 := new RunwayShow(fasTest1, [pTest1], roomTest1, "TestPresentation1",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
+			--runTest1 := new RunwayShow(fasTest1, [pTest1], roomTest1, "TestPresentation1",  mk_FSUtils`date(2017,12,15,16,00),  mk_FSUtils`date(2017,12,15,17,30), "testSubject");
 			/* would fail because there is already an event  in roomTest1 at the same time and pTest1 isn't a designer*/
 			
-			--runTest1 := new RunwayShow(fasTest1, [], roomTest1, "TestPresentation1",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testSubject");
+			--runTest1 := new RunwayShow(fasTest1, [], roomTest1, "TestPresentation1",  mk_FSUtils`date(2017,12,15,16,00),  mk_FSUtils`date(2017,12,15,17,30), "testSubject");
 			/* would fail because there is already an event  in roomTest1 at the same time and there is no organizers*/
 			
-			--runTest1 := new RunwayShow(fasTest1, [pTest1], roomTest1, "TestPresentation1",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,25,17,30), "testSubject");
+			--runTest1 := new RunwayShow(fasTest1, [pTest1], roomTest1, "TestPresentation1",  mk_FSUtils`date(2017,12,15,16,00),  mk_FSUtils`date(2017,12,25,17,30), "testSubject");
 			/* would fail because there is already an event  in roomTest1 at the same time, pTest1 isn't a designer and the end date is after the end date of the main event*/
 		
-			Utils`assertTrue(len presTest1.organizers >= 1);
-			Utils`assertTrue(len primpTest1.organizers >= 1);
-			Utils`assertTrue(len runTest1.organizers >= 1);
-			Utils`assertTrue(not exists e1, e2 in set elems fasTest1.events & (e1 <> e2 and e1.place = e2.place and Utils`coincDate(e1.startDate, e1.endDate, e2.startDate, e2.endDate)));
+			FSUtils`assertTrue(len presTest1.organizers >= 1);
+			FSUtils`assertTrue(len primpTest1.organizers >= 1);
+			FSUtils`assertTrue(len runTest1.organizers >= 1);
+			FSUtils`assertTrue(not exists e1, e2 in set elems fasTest1.events & (e1 <> e2 and e1.place = e2.place and FSUtils`coincDate(e1.startDate, e1.endDate, e2.startDate, e2.endDate)));
 			
 		--test scenario 3
-			ticTest1 := new Ticket(pTest1,fasTest1,mk_Utils`date(2017,12,15,16,00),mk_Utils`date(2017,12,15,16,30),<Guest>);
-			ticTest2 := new Ticket(pTest2,fasTest1,mk_Utils`date(2017,12,15,16,00),mk_Utils`date(2017,12,15,18,30),<Worker>);
-			ticTest3 := new Ticket(pTest3,fasTest1,mk_Utils`date(2017,12,15,16,00),mk_Utils`date(2017,12,17,16,30),<Designer>);
-			ticTest4 := new Ticket(pTest4,fasTest1,mk_Utils`date(2017,12,15,16,00),mk_Utils`date(2017,12,15,16,30),<Guest>);
+			ticTest1 := new Ticket(pTest1,fasTest1,mk_FSUtils`date(2017,12,15,16,00),mk_FSUtils`date(2017,12,15,16,30),<Guest>);
+			ticTest2 := new Ticket(pTest2,fasTest1,mk_FSUtils`date(2017,12,15,16,00),mk_FSUtils`date(2017,12,15,18,30),<Worker>);
+			ticTest3 := new Ticket(pTest3,fasTest1,mk_FSUtils`date(2017,12,15,16,00),mk_FSUtils`date(2017,12,17,16,30),<Designer>);
+			ticTest4 := new Ticket(pTest4,fasTest1,mk_FSUtils`date(2017,12,15,16,00),mk_FSUtils`date(2017,12,15,16,30),<Guest>);
 			
-			--ticTest3 := new Ticket(pTest2,fasTest1,mk_Utils`date(2016,10,15,16,00),mk_Utils`date(2016,10,15,16,30),<Designer>);
+			--ticTest3 := new Ticket(pTest2,fasTest1,mk_FSUtils`date(2016,10,15,16,00),mk_FSUtils`date(2016,10,15,16,30),<Designer>);
 			/*would fail because pTest2 isn't a designer, the dates are before the date of the show and because pTest2 already as an ticket for this event*/
 			
-			Utils`assertTrue(fasTest1.peopleAttending = {pTest1,pTest2,pTest3,pTest4});
-			Utils`assertTrue(fasTest1.getDesigners() = {pTest3, pTest4});
-			Utils`assertTrue(exists t in set dom pTest1.ticketToShow & (pTest1.ticketToShow(t) = fasTest1));
-			Utils`assertTrue(exists t in set dom pTest2.ticketToShow & (pTest2.ticketToShow(t) = fasTest1));
-			Utils`assertTrue(exists t in set dom pTest3.ticketToShow & (pTest3.ticketToShow(t) = fasTest1));
-			Utils`assertTrue(exists t in set dom pTest4.ticketToShow & (pTest4.ticketToShow(t) = fasTest1));
-			Utils`assertTrue(pTest1 in set fasTest1.peopleAttending);
-			Utils`assertTrue(pTest2 in set fasTest1.peopleAttending);
-			Utils`assertTrue(pTest3 in set fasTest1.peopleAttending);
-			Utils`assertTrue(pTest4 in set fasTest1.peopleAttending);
+			FSUtils`assertTrue(fasTest1.peopleAttending = {pTest1,pTest2,pTest3,pTest4});
+			FSUtils`assertTrue(fasTest1.getDesigners() = {pTest3, pTest4});
+			FSUtils`assertTrue(exists t in set dom pTest1.ticketToShow & (pTest1.ticketToShow(t) = fasTest1));
+			FSUtils`assertTrue(exists t in set dom pTest2.ticketToShow & (pTest2.ticketToShow(t) = fasTest1));
+			FSUtils`assertTrue(exists t in set dom pTest3.ticketToShow & (pTest3.ticketToShow(t) = fasTest1));
+			FSUtils`assertTrue(exists t in set dom pTest4.ticketToShow & (pTest4.ticketToShow(t) = fasTest1));
+			FSUtils`assertTrue(pTest1 in set fasTest1.peopleAttending);
+			FSUtils`assertTrue(pTest2 in set fasTest1.peopleAttending);
+			FSUtils`assertTrue(pTest3 in set fasTest1.peopleAttending);
+			FSUtils`assertTrue(pTest4 in set fasTest1.peopleAttending);
 			
 		--test scenario 4
 			

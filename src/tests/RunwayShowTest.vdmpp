@@ -2,66 +2,66 @@ class RunwayShowTest
 
 /*
 
-	Defines the test scenarios and test cases for the Utils class.
+	Defines the test scenarios and test cases for the FSUtils class.
   J. Oliveira, FEUP, MFES, 2017/18.
 
 */
 
 instance variables
-	perTest1:Person := new Person("Test Person1", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, false);
-	perTest2:Person := new Person("Test Person2", mk_Utils`date(1991,12,15,16,00), <Female>, <S>, false);
-	perTest3:Person := new Person("Test Person3", mk_Utils`date(1986,12,15,16,00), <Male>, <XL>, true);
+	perTest1:Person := new Person("Test Person1", mk_FSUtils`date(1996,12,15,16,00), <Male>, <L>, false);
+	perTest2:Person := new Person("Test Person2", mk_FSUtils`date(1991,12,15,16,00), <Female>, <S>, false);
+	perTest3:Person := new Person("Test Person3", mk_FSUtils`date(1986,12,15,16,00), <Male>, <XL>, true);
 	orgTest1: seq of (Person) := [perTest1, perTest2, perTest3]; 
 	rTest1:Room := new Room("Sala1","Edificio A, Piso 2",50);
 	rTest2:Room := new Room("Sala2","Edificio B, Piso 3",5);
-	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
-	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
-	rTest:RunwayShow := new RunwayShow(fasTest1, [perTest1],rTest1, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testTheme");
+	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_FSUtils`date(2017,12,15,8,00),  mk_FSUtils`date(2017,12,20,00,30));
+	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_FSUtils`date(2017,12,15,8,00),  mk_FSUtils`date(2017,12,20,00,30));
+	rTest:RunwayShow := new RunwayShow(fasTest1, [perTest1],rTest1, "NameTest",  mk_FSUtils`date(2017,12,15,16,00),  mk_FSUtils`date(2017,12,15,17,30), "testTheme");
 
 operations
 	private testRunwayShow : () ==> ()
 		testRunwayShow() == (
 		--test constructor
-			Utils`assertTrue(rTest.organizers = [perTest1]);
-			Utils`assertTrue(rTest.place = rTest1);
-			Utils`assertTrue(rTest.name = "NameTest");
-			Utils`assertTrue(rTest.startDate = mk_Utils`date(2017,12,15,16,00));
-			Utils`assertTrue(rTest.endDate = mk_Utils`date(2017,12,15,17,30));
-			Utils`assertTrue(rTest.theme = "testTheme");
+			FSUtils`assertTrue(rTest.organizers = [perTest1]);
+			FSUtils`assertTrue(rTest.place = rTest1);
+			FSUtils`assertTrue(rTest.name = "NameTest");
+			FSUtils`assertTrue(rTest.startDate = mk_FSUtils`date(2017,12,15,16,00));
+			FSUtils`assertTrue(rTest.endDate = mk_FSUtils`date(2017,12,15,17,30));
+			FSUtils`assertTrue(rTest.theme = "testTheme");
 		
 		--test setPlace()
 			rTest.setPlace(rTest2);
-			Utils`assertTrue(rTest.place = rTest2);
+			FSUtils`assertTrue(rTest.place = rTest2);
 		
 		--test setName()
 			rTest.setName("nameTest1");
-			Utils`assertTrue(rTest.name = "nameTest1");
+			FSUtils`assertTrue(rTest.name = "nameTest1");
 		
 		--test setStartDate()
-			rTest.setStartDate(mk_Utils`date(2017,12,14,16,00));
-			Utils`assertTrue(rTest.startDate = mk_Utils`date(2017,12,14,16,00));
+			rTest.setStartDate(mk_FSUtils`date(2017,12,14,16,00));
+			FSUtils`assertTrue(rTest.startDate = mk_FSUtils`date(2017,12,14,16,00));
 		
 		--test setEndDate()
-			rTest.setEndDate(mk_Utils`date(2017,12,14,17,00));
-			Utils`assertTrue(rTest.endDate = mk_Utils`date(2017,12,14,17,00));
+			rTest.setEndDate(mk_FSUtils`date(2017,12,14,17,00));
+			FSUtils`assertTrue(rTest.endDate = mk_FSUtils`date(2017,12,14,17,00));
 		
 		--test addOrganizer()
 			--rTest.addOrganizer(perTest1);
 			rTest.addOrganizer(perTest2);
-			Utils`assertTrue(rTest.organizers = [perTest1, perTest2]);
+			FSUtils`assertTrue(rTest.organizers = [perTest1, perTest2]);
 		
 		--test setOrganizers()
 			rTest.setOrganizers(orgTest1);
-			Utils`assertTrue(rTest.organizers = [perTest1, perTest2, perTest3]);
+			FSUtils`assertTrue(rTest.organizers = [perTest1, perTest2, perTest3]);
 			
 		--test endEvent()
 			rTest.place.addOccupant(perTest1);
 			rTest.endEvent();
-			Utils`assertTrue(rTest.place.occupants = []);
+			FSUtils`assertTrue(rTest.place.occupants = []);
 			
 		--test setTheme()			
 			rTest.setTheme("testTheme1");
-			Utils`assertTrue(rTest.theme = "testTheme1");
+			FSUtils`assertTrue(rTest.theme = "testTheme1");
 		);
 		
 	public static main: () ==> ()

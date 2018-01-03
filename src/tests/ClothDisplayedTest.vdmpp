@@ -8,37 +8,37 @@ class ClothDisplayedTest
 */
 
 instance variables
-	pTest1:Person := new Person("Test Person1", mk_Utils`date(1996,12,15,16,00), <Female>, <S>, false);
-	pTest2:Person := new Person("Test Person2", mk_Utils`date(1996,12,15,16,00), <Male>, <L>, true);
-	pTest3:Person := new Person("Test Person3", mk_Utils`date(1994,10,15,16,00), <Female>, <S>, false);
+	pTest1:Person := new Person("Test Person1", mk_FSUtils`date(1996,12,15,16,00), <Female>, <S>, false);
+	pTest2:Person := new Person("Test Person2", mk_FSUtils`date(1996,12,15,16,00), <Male>, <L>, true);
+	pTest3:Person := new Person("Test Person3", mk_FSUtils`date(1994,10,15,16,00), <Female>, <S>, false);
 	cTest1:PieceOfCloth := new PieceOfCloth(pTest2,<S>,<Shirt>); 
 	cTest2:PieceOfCloth := new PieceOfCloth(pTest2,<S>,<Pants>); 
 	rTest1:Room := new Room("Sala1","Edificio A, Piso 2",50);
-	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
-	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_Utils`date(2017,12,15,8,00),  mk_Utils`date(2017,12,20,00,30));
-	runTest1:RunwayShow := new RunwayShow(fasTest1, [pTest2],rTest1, "NameTest",  mk_Utils`date(2017,12,15,16,00),  mk_Utils`date(2017,12,15,17,30), "testTheme");
-	runTest2:RunwayShow := new RunwayShow(fasTest1, [pTest2],rTest1, "NameTest",  mk_Utils`date(2017,12,15,14,00),  mk_Utils`date(2017,12,15,15,30), "testTheme");
+	fasTest1:FashionShow  := new FashionShow("1234Show", "MEO Arena", mk_FSUtils`date(2017,12,15,8,00),  mk_FSUtils`date(2017,12,20,00,30));
+	fasTest2:FashionShow  := new FashionShow("5678Show", "MEO Arena", mk_FSUtils`date(2017,12,15,8,00),  mk_FSUtils`date(2017,12,20,00,30));
+	runTest1:RunwayShow := new RunwayShow(fasTest1, [pTest2],rTest1, "NameTest",  mk_FSUtils`date(2017,12,15,16,00),  mk_FSUtils`date(2017,12,15,17,30), "testTheme");
+	runTest2:RunwayShow := new RunwayShow(fasTest1, [pTest2],rTest1, "NameTest",  mk_FSUtils`date(2017,12,15,14,00),  mk_FSUtils`date(2017,12,15,15,30), "testTheme");
 	cDTest1:ClothDisplayed := new ClothDisplayed(pTest1,cTest1,runTest1);
 	
 operations
 	private testClothDisplayed : () ==> ()
 		testClothDisplayed() == (
 			--test contructor
-			Utils`assertTrue(cDTest1.model = pTest1);
-			Utils`assertTrue(cDTest1.cloth = cTest1);
-			Utils`assertTrue(cDTest1.runway = runTest1);
+			FSUtils`assertTrue(cDTest1.model = pTest1);
+			FSUtils`assertTrue(cDTest1.cloth = cTest1);
+			FSUtils`assertTrue(cDTest1.runway = runTest1);
 			
 			--test setModel
 			cDTest1.setModel(pTest3);
-			Utils`assertTrue(cDTest1.model = pTest3);
+			FSUtils`assertTrue(cDTest1.model = pTest3);
 			
 			--test setCloth
 			cDTest1.setCloth(cTest2);
-			Utils`assertTrue(cDTest1.cloth = cTest2);
+			FSUtils`assertTrue(cDTest1.cloth = cTest2);
 			
 			--test setCloth
 			cDTest1.setRunwayShow(runTest2);
-			Utils`assertTrue(cDTest1.runway = runTest2);
+			FSUtils`assertTrue(cDTest1.runway = runTest2);
 		);
 		
 	public static main: () ==> ()
